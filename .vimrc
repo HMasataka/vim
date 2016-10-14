@@ -25,6 +25,7 @@ call dein#add('Shougo/neocomplete.vim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('scrooloose/nerdtree')
+call dein#add('sjl/gundo.vim')
 
 call dein#end()
 
@@ -68,6 +69,7 @@ noremap <silent> <space>s :<C-u>Unite file_mru<CR>
 "NERDTree
 ""起動
 noremap <silent> <space>n :NERDTree<CR>
+
 ""起動時にNERDTreeを表示
 autocmd vimenter * NERDTree
 ""ファイル名が指定されてVIMが起動した場合はNERDTreeを表示しない
@@ -75,12 +77,26 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() != 0 && !exists("s:std_in") | q | endif
 
 
+"Gundo
+nnoremap <F5> :GundoToggle<CR>
+let g:gundo_prefer_python3 = 1
+
 noremap j gj
 noremap k gk
 noremap ; :
 noremap : ;
-nnoremap <CR> A<CR><ESC>
+noremap <CR> A<CR><ESC>
 
+inoremap <C-a> <Esc>ggVG
+noremap <C-a> ggVG
+
+inoremap <C-j> <Down>
+inoremap <C-h> <Left>
+inoremap <C-k> <Up>
+inoremap <C-l> <Right>
+
+inoremap <C-n> <ESC>
+vnoremap <C-n> <ESC>
 
 " Insertモードのときカーソルの形状を変更
 let &t_ti.="\e[1 q"
@@ -93,3 +109,18 @@ inoremap <C-e> <Esc><S-a>
 inoremap <C-a> <Esc><S-i>
 noremap <C-e> <Esc>$
 noremap <C-a> <Esc>^
+
+"縛りプレイ
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+noremap <Down> <Nop>
+inoremap <Up> <Nop>
+
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Down> <Nop>
+noremap <Up> <Nop>
+
+
+syntax on
+

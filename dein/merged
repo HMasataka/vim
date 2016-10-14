@@ -1,1 +1,1 @@
-['dein.vim', 'neocomplete.vim', 'neomru.vim', 'nerdtree', 'unite.vim']
+['dein.vim', 'gundo.vim', 'neocomplete.vim', 'neomru.vim', 'nerdtree', 'unite.vim']
