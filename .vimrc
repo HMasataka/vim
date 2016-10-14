@@ -1,55 +1,36 @@
-"colorscheme murphy
+"カラースキーマを自作のものに設定
 colorscheme mstn
 
 "行数表示
 set number
 
 " タブを表示するときの幅
- set tabstop=4
+set tabstop=4
 " " タブを挿入するときの幅
- set shiftwidth=4
-" " タブをタブとして扱う(スペースに展開しない)
- set expandtab
-" set softtabstop=0/
+set shiftwidth=4
+set expandtab
 
- 
- " vim起動時のみruntimepathにneobundle.vimを追加
-if has('vim_starting')
+
+if &compatible
   set nocompatible
-  set runtimepath+=$HOME/.vim/bundle/neobundle.vim/
 endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
-" neobundle.vimの初期化 
-" NeoBundleを更新するための設定
-call neobundle#begin(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call dein#begin(expand('~/.vim/dein'))
 
-" 読み込むプラグインを記載
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'itchyny/lightline.vim'
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'thinca/vim-quickrun'
+call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('scrooloose/nerdtree')
 
-" 読み込んだプラグインも含め、ファイルタイプの検出、ファイルタイプ別プラグイン/インデントを有効化する
-filetype plugin indent on
+call dein#end()
 
-" インストールのチェック
-NeoBundleCheck
-
-call neobundle#end()
-
-            
-"NERD_tree.vim
-""---------------------
-nnoremap <f2> :NERDTree<CR>
-
-""起動時にNERDTreeを表示
-autocmd vimenter * NERDTree
-""ファイル名が指定されてVIMが起動した場合はNERDTreeを表示しない
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() != 0 && !exists("s:std_in") | q | endif
+if dein#check_install()
+  call dein#install()
+endif
 
 
 " neocomplete.vim
@@ -76,16 +57,30 @@ let g:neocomplete#max_list = 20
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() :"\<CR>"
 
-"QuickRun
-let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
-nnoremap <f5> :QuickRun
+""" unite.vim
+" 入力モードで開始する
+let g:unite_enable_start_insert=1
+" バッファ一覧
+noremap <silent> <space>b :<C-u>Unite buffer<CR>
+" 最近使用したファイル一覧
+noremap <silent> <space>s :<C-u>Unite file_mru<CR>
 
-let g:quickrun_config = {
-	\   "_" : {
-	\       "outputter/buffer/split" : ":botright",
-	\       "outputter/buffer/close_on_empty" : 1
-	\   },
-	\}
+"NERDTree
+""起動
+noremap <silent> <space>n :NERDTree<CR>
+""起動時にNERDTreeを表示
+autocmd vimenter * NERDTree
+""ファイル名が指定されてVIMが起動した場合はNERDTreeを表示しない
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() != 0 && !exists("s:std_in") | q | endif
+
+
+noremap j gj
+noremap k gk
+noremap ; :
+noremap : ;
+nnoremap <CR> A<CR><ESC>
+
 
 " Insertモードのときカーソルの形状を変更
 let &t_ti.="\e[1 q"
@@ -94,7 +89,7 @@ let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
 "行頭（^)と行末($)にカーソルを移動
-inoremap <C-e> <Esc>$a
-inoremap <C-a> <Esc>^a
-noremap <C-e> <Esc>$a
-noremap <C-a> <Esc>^a
+inoremap <C-e> <Esc><S-a>
+inoremap <C-a> <Esc><S-i>
+noremap <C-e> <Esc>$
+noremap <C-a> <Esc>^
