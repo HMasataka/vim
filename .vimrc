@@ -1,6 +1,3 @@
-"カラースキーマを自作のものに設定
-colorscheme mstn
-
 "行数表示
 set number
 
@@ -9,6 +6,12 @@ set tabstop=4
 " " タブを挿入するときの幅
 set shiftwidth=4
 set expandtab
+
+
+"改行時に前の行のインデントを継続する
+set autoindent
+"改行時に入力された行の末尾に合わせて次の行のインデントを増減する 
+set smartindent
 
 
 if &compatible
@@ -32,7 +35,6 @@ call dein#end()
 if dein#check_install()
   call dein#install()
 endif
-
 
 " neocomplete.vim
 " "------------------------------------
@@ -60,7 +62,7 @@ inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() :"\<CR>"
 
 """ unite.vim
 " 入力モードで開始する
-let g:unite_enable_start_insert=1
+"let g:unite_enable_start_insert=1
 " バッファ一覧
 noremap <silent> <space>b :<C-u>Unite buffer<CR>
 " 最近使用したファイル一覧
@@ -121,6 +123,23 @@ noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Up> <Nop>
 
+"画面分割関連
+noremap ss :split<CR>
+noremap sv :vsplit<CR>
+noremap sh <C-w>h
+noremap sj <C-w>j
+noremap sk <C-w>k
+noremap sl <C-w>l
+noremap sw <C-w>w
 
+noremap st :tabnew<CR>
+noremap sn gt
+noremap su gT
+
+set t_Co=256
 syntax on
+
+"カラースキーマを自作のものに設定
+colorscheme mstn
+
 
