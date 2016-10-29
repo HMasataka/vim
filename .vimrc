@@ -7,12 +7,18 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+"ステータスバーを常に表示
+set laststatus=2
 
 "改行時に前の行のインデントを継続する
 set autoindent
-"改行時に入力された行の末尾に合わせて次の行のインデントを増減する 
+"改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
 
+"検索結果をすべてハイライト
+set hlsearch
+"ハイライト解除
+noremap <Esc><Esc> :noh<CR>
 
 if &compatible
   set nocompatible
@@ -29,6 +35,9 @@ call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
+call dein#add('Yggdroot/indentLine')
+call dein#add('bling/vim-airline')
+
 
 call dein#end()
 
@@ -36,8 +45,7 @@ if dein#check_install()
   call dein#install()
 endif
 
-" neocomplete.vim
-" "------------------------------------
+""""""""""""""""""""""""" neocomplete.vim"""""""""""""""""""""""""""""""
 " " NeoCompleteを有効にする
 let g:neocomplete#enable_at_startup = 1
 " " 補完が自動で開始される文字数
@@ -60,7 +68,7 @@ let g:neocomplete#max_list = 20
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() :"\<CR>"
 
-""" unite.vim
+"""""""""""""""""""""""""""" unite.vim""""""""""""""""""""""""""""""""""""
 " 入力モードで開始する
 "let g:unite_enable_start_insert=1
 " バッファ一覧
@@ -68,7 +76,8 @@ noremap <silent> <space>b :<C-u>Unite buffer<CR>
 " 最近使用したファイル一覧
 noremap <silent> <space>s :<C-u>Unite file_mru<CR>
 
-"NERDTree
+
+"""""""""""""""""""""""""""""""NERDTree""""""""""""""""""""""""""""""""""""
 ""起動
 noremap <silent> <space>n :NERDTree<CR>
 
@@ -77,11 +86,41 @@ autocmd vimenter * NERDTree
 ""ファイル名が指定されてVIMが起動した場合はNERDTreeを表示しない
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() != 0 && !exists("s:std_in") | q | endif
+""不可視ファイル
+let NERDTreeShowHidden = 1
 
-
-"Gundo
+""""""""""""""""""""""""""""""Gundo"""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_prefer_python3 = 1
+
+""""""""""""""""""""""""""""""indentline"""""""""""""""""""""""""""""""""""
+let g:indentLine_color_term = 111
+let g:indentLine_color_gui = '#708090'
+let g:indentLine_char = '|'
+
+
+""""""""""""""""""""""""""""""airline"""""""""""""""""""""""""""""""""""
+let g:airline_enable_branch = 0
+let g:airline_section_b = "%t %M"
+let g:airline_section_c = ''
+let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
+let g:airline_section_x =
+\ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
+\ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
+\ "%{strlen(&filetype)?&filetype:'no ft'}"
+let g:airline_section_y = '%3p%%' 
+let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
+let g:airline#extensions#whitespace#enabled = 0
+
+" タブラインにもairlineを適用
+let g:airline#extensions#tabline#enabled = 1
+" （タブが一個の場合）バッファのリストをタブラインに表示する機能をオフ
+let g:airline#extensions#tabline#show_buffers = 0
+" 0でそのタブで開いてるウィンドウ数、1で左のタブから連番
+let g:airline#extensions#tabline#tab_nr_type = 1
+" タブに表示する名前（fnamemodifyの第二引数）
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 
 noremap j gj
 noremap k gk
@@ -135,6 +174,9 @@ noremap sw <C-w>w
 noremap st :tabnew<CR>
 noremap sn gt
 noremap su gT
+
+"末尾の空白削除
+noremap <F2> :%s/\s\s*$<CR>
 
 set t_Co=256
 syntax on
