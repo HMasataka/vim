@@ -38,12 +38,56 @@ call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('bling/vim-airline')
 
-
 call dein#end()
 
 if dein#check_install()
   call dein#install()
 endif
+
+
+""""""""""""""""""""""""" dein.rc.vim """"""""""""""""""""""""""""""""""""""""
+
+" DeinClean command
+command! -bang DeinClean call s:dein_clean(<bang>0)
+
+function! s:dein_clean(force) abort "{{{
+    let del_all = a:force
+    for p in dein#check_clean()
+        if !del_all
+            let answer = s:input(printf('Delete %s ? [y/N/a]', fnamemodify(p, ':~')))
+
+            if type(answer) is type(0) && answer <= 0
+                " Cancel (Esc or <C-c>)
+                break
+            endif
+
+            if answer !~? '^\(y\%[es]\|a\%[ll]\)$'
+                continue
+            endif
+
+            if answer =~? '^a\%[ll]$'
+                let del_all = 1
+            endif
+        endif
+
+        " Delete plugin dir
+        call dein#install#_rm(p)
+    endfor
+endfunction "}}}
+
+function! s:input(...) abort "{{{
+    new
+    cnoremap <buffer> <Esc> __CANCELED__<CR>
+    try
+        let input = call('input', a:000)
+        let input = input =~# '__CANCELED__$' ? 0 : input
+    catch /^Vim:Interrupt$/
+        let input = -1
+    finally
+        bwipeout!
+        return input
+    endtry
+endfunction "}}}
 
 """"""""""""""""""""""""" neocomplete.vim"""""""""""""""""""""""""""""""
 " " NeoCompleteを有効にする
@@ -108,7 +152,7 @@ let g:airline_section_x =
 \ "%{strlen(&fileformat)?&fileformat:''}".s:sep.
 \ "%{strlen(&fenc)?&fenc:&enc}".s:sep.
 \ "%{strlen(&filetype)?&filetype:'no ft'}"
-let g:airline_section_y = '%3p%%' 
+let g:airline_section_y = '%3p%%'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 let g:airline#extensions#whitespace#enabled = 0
 
@@ -182,6 +226,6 @@ set t_Co=256
 syntax on
 
 "カラースキーマを自作のものに設定
-colorscheme mstn
+colorscheme mstn2
 
 
