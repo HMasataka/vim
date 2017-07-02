@@ -2,9 +2,9 @@
 set number
 
 " タブを表示するときの幅
-set tabstop=4
+set tabstop=2
 " " タブを挿入するときの幅
-set shiftwidth=4
+set shiftwidth=2
 set expandtab
 
 "ステータスバーを常に表示
@@ -25,6 +25,9 @@ if &compatible
 endif
 set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 
+filetype plugin on
+runtime macros/matchit.vim
+
 call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('Shougo/dein.vim')
@@ -37,6 +40,13 @@ call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('bling/vim-airline')
+call dein#add('hail2u/vim-css3-syntax')
+call dein#add('pangloss/vim-javascript')
+call dein#add('AtsushiM/sass-compile.vim')
+call dein#add('mattn/emmet-vim')
+call dein#add('AtsushiM/search-parent.vim')
+call dein#add('tmhedberg/matchit')
+call dein#add('othree/html5.vim')
 
 call dein#end()
 
@@ -165,6 +175,40 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 " タブに表示する名前（fnamemodifyの第二引数）
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+""""""""""""""""""""""""""""""sass"""""""""""""""""""""""""""""""""""
+
+""{{{
+  let g:sass_compile_auto = 1
+  let g:sass_compile_cdloop = 5
+  let g:sass_compile_cssdir = ['css', 'stylesheet']
+  let g:sass_compile_file = ['scss', 'sass']
+  let g:sass_compile_beforecmd = ''
+  let g:sass_compile_aftercmd = ''
+  "}}}
+
+""""""""""""""""""""""""""""""emmet"""""""""""""""""""""""""""""""""""
+let g:user_emmet_mode = 'iv'
+let g:user_emmet_leader_key = '<C-Y>'
+let g:use_emmet_complete_tag = 1
+let g:user_emmet_settings = {
+  \ 'lang' : 'ja',
+  \ 'html' : {
+    \   'filters' : 'html',
+    \ },
+  \ 'css' : {
+    \   'filters' : 'fc',
+    \ },
+  \ 'php' : {
+    \   'extends' : 'html',
+    \   'filters' : 'html',
+    \ },
+  \}
+augroup EmmitVim
+  autocmd!
+  autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
+augroup END
+
+
 
 noremap j gj
 noremap k gk
@@ -227,5 +271,4 @@ syntax on
 
 "カラースキーマを自作のものに設定
 colorscheme mstn2
-
 
