@@ -2,9 +2,9 @@
 set number
 
 " タブを表示するときの幅
-set tabstop=2
+set tabstop=4
 " " タブを挿入するときの幅
-set shiftwidth=2
+set shiftwidth=4
 set expandtab
 
 "ステータスバーを常に表示
@@ -216,16 +216,8 @@ noremap ; :
 noremap : ;
 noremap <CR> A<CR><ESC>
 
-inoremap <C-a> <Esc>ggVG
-noremap <C-a> ggVG
-
-inoremap <C-j> <Down>
-inoremap <C-h> <Left>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
-
-inoremap <C-n> <ESC>
-vnoremap <C-n> <ESC>
+noremap! <C-j> <Esc>
+noremap <C-j> :noh<CR>
 
 " Insertモードのときカーソルの形状を変更
 let &t_ti.="\e[1 q"
@@ -242,7 +234,7 @@ noremap <C-a> <Esc>^
 "縛りプレイ
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
-noremap <Down> <Nop>
+inoremap <Down> <Nop>
 inoremap <Up> <Nop>
 
 noremap <Left> <Nop>
