@@ -20,6 +20,56 @@ set hlsearch
 "ハイライト解除
 noremap <Esc><Esc> :noh<CR>
 
+
+noremap j gj
+noremap k gk
+noremap ; :
+noremap : ;
+noremap <CR> A<CR><ESC>
+
+noremap! <C-j> <Esc>
+noremap <C-j> :noh<CR>
+
+inoremap <C-l> <Right>
+
+" Insertモードのときカーソルの形状を変更
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
+
+"行頭（^)と行末($)にカーソルを移動
+inoremap <C-e> <Esc><S-a>
+inoremap <C-a> <Esc><S-i>
+noremap <C-e> <Esc>$
+noremap <C-a> <Esc>^
+
+"縛りプレイ
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Down> <Nop>
+inoremap <Up> <Nop>
+
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+noremap <Down> <Nop>
+noremap <Up> <Nop>
+
+"画面分割関連
+noremap ss :split<CR>
+noremap sv :vsplit<CR>
+noremap sh <C-w>h
+noremap sj <C-w>j
+noremap sk <C-w>k
+noremap sl <C-w>l
+noremap sw <C-w>w
+
+noremap st :tabnew<CR>
+noremap sn gt
+noremap su gT
+
+"末尾の空白削除
+noremap <F2> :%s/\s\s*$<CR>
 if &compatible
   set nocompatible
 endif
@@ -208,57 +258,8 @@ augroup EmmitVim
   autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
 augroup END
 
-
-
-noremap j gj
-noremap k gk
-noremap ; :
-noremap : ;
-noremap <CR> A<CR><ESC>
-
-noremap! <C-j> <Esc>
-noremap <C-j> :noh<CR>
-
-" Insertモードのときカーソルの形状を変更
-let &t_ti.="\e[1 q"
-let &t_SI.="\e[5 q"
-let &t_EI.="\e[1 q"
-let &t_te.="\e[0 q"
-
-"行頭（^)と行末($)にカーソルを移動
-inoremap <C-e> <Esc><S-a>
-inoremap <C-a> <Esc><S-i>
-noremap <C-e> <Esc>$
-noremap <C-a> <Esc>^
-
-"縛りプレイ
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Down> <Nop>
-inoremap <Up> <Nop>
-
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-noremap <Down> <Nop>
-noremap <Up> <Nop>
-
-"画面分割関連
-noremap ss :split<CR>
-noremap sv :vsplit<CR>
-noremap sh <C-w>h
-noremap sj <C-w>j
-noremap sk <C-w>k
-noremap sl <C-w>l
-noremap sw <C-w>w
-
-noremap st :tabnew<CR>
-noremap sn gt
-noremap su gT
-
-"末尾の空白削除
-noremap <F2> :%s/\s\s*$<CR>
-
 set t_Co=256
+
 syntax on
 
 "カラースキーマを自作のものに設定
