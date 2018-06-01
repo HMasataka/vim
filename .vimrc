@@ -92,7 +92,6 @@ call dein#add('Yggdroot/indentLine')
 call dein#add('bling/vim-airline')
 call dein#add('hail2u/vim-css3-syntax')
 call dein#add('pangloss/vim-javascript')
-call dein#add('AtsushiM/sass-compile.vim')
 call dein#add('mattn/emmet-vim')
 call dein#add('AtsushiM/search-parent.vim')
 call dein#add('tmhedberg/matchit')
@@ -224,17 +223,6 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:airline#extensions#tabline#tab_nr_type = 1
 " タブに表示する名前（fnamemodifyの第二引数）
 let g:airline#extensions#tabline#fnamemod = ':t'
-
-""""""""""""""""""""""""""""""sass"""""""""""""""""""""""""""""""""""
-
-""{{{
-  let g:sass_compile_auto = 1
-  let g:sass_compile_cdloop = 5
-  let g:sass_compile_cssdir = ['css', 'stylesheet']
-  let g:sass_compile_file = ['scss', 'sass']
-  let g:sass_compile_beforecmd = ''
-  let g:sass_compile_aftercmd = ''
-  "}}}
 
 """"""""""""""""""""""""""""""emmet"""""""""""""""""""""""""""""""""""
 let g:user_emmet_mode = 'iv'
