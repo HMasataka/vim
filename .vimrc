@@ -96,6 +96,8 @@ call dein#add('mattn/emmet-vim')
 call dein#add('AtsushiM/search-parent.vim')
 call dein#add('tmhedberg/matchit')
 call dein#add('othree/html5.vim')
+call dein#add('nvie/vim-flake8')
+call dein#add('simeji/winresizer')
 
 call dein#end()
 
