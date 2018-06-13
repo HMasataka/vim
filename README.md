@@ -17,3 +17,8 @@ git clone https://github.com/Shougo/dein.vim.git ~/.vim/dein/repos/github.com/Sh
 ```
 sudo apt-get install vim-gnome
 ```
+
+# deocompleteの有効化
+```
+pip3 install neovim
+```
