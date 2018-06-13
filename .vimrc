@@ -20,6 +20,7 @@ set hlsearch
 "ハイライト解除
 noremap <Esc><Esc> :noh<CR>
 
+set pyxversion=3
 
 noremap j gj
 noremap k gk
@@ -83,8 +84,11 @@ call dein#begin(expand('~/.vim/dein'))
 call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
-call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/deoplete.nvim')
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
 call dein#add('Shougo/unite.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
@@ -150,28 +154,28 @@ function! s:input(...) abort "{{{
     endtry
 endfunction "}}}
 
-""""""""""""""""""""""""" neocomplete.vim"""""""""""""""""""""""""""""""
+""""""""""""""""""""""""" deoplete.vim"""""""""""""""""""""""""""""""
 " " NeoCompleteを有効にする
-let g:neocomplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
 " " 補完が自動で開始される文字数
-let g:neocomplete#auto_completion_start_length = 2
+let g:deoplete#auto_completion_start_length = 1
 " " smart case有効化。 大文字が入力されるまで大文字小文字の区別を無視する
-let g:neocomplete#enable_smart_case = 1
+let g:deoplete#enable_smart_case = 1
 " " camle caseを有効化。大文字を区切りとしたワイルドカードのように振る舞う
-let g:neocomplete#enable_camel_case_completion = 1
+let g:deoplete#enable_camel_case_completion = 1
 " " _(アンダーバー)区切りの補完を有効化
-let g:neocomplete#enable_underbar_completion = 1
+let g:deoplete#enable_underbar_completion = 1
 " " シンタックスをキャッシュするときの最小文字長を3に
-let g:neocomplete#min_syntax_length = 3
+let g:deoplete#min_syntax_length = 3
 " " -入力による候補番号の表示
-let g:neocomplete#enable_quick_match = 1
+let g:deoplete#enable_quick_match = 1
 " " 補完候補の一番先頭を選択状態にする(AutoComplPopと似た動作)
-let g:neocomplete#enable_auto_select = 1
+let g:deoplete#enable_auto_select = 1
 " "ポップアップメニューで表示される候補の数。初期値は100
-let g:neocomplete#max_list = 20
+let g:deoplete#max_list = 20
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr><CR> pumvisible() ? neocomplete#close_popup() :"\<CR>"
+inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 
 """""""""""""""""""""""""""" unite.vim""""""""""""""""""""""""""""""""""""
 " 入力モードで開始する
