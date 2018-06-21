@@ -1,19 +1,33 @@
+""""""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
+
 "行数表示
 set number
+
+" 現在の行をハイライト
+set cursorline
+
+"上と合わせることで行番号のみハイライト
+hi clear CursorLine
+
+"ステータスバーを常に表示
+set laststatus=2
+
+""""""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
+
+" tabの代わりに半角スペース
+set expandtab
 
 " タブを表示するときの幅
 set tabstop=4
 
 " タブを挿入するときの幅
 set shiftwidth=4
-" tabの代わりに半角スペース
-set expandtab
-
-"ステータスバーを常に表示
-set laststatus=2
 
 "改行時に前の行のインデントを継続する
 set autoindent
+
+"改行時に次の行のインデントを増減する
+set smartindent
 
 " スワップファイルを作らない
 set noswapfile
@@ -21,22 +35,16 @@ set noswapfile
 " マウス有効化
 set mouse=a
 
-" 検索時に大文字小文字を区別しない
-set ignorecase
-
 " 置換の際のgオプションをデフォルトで有効化する
 set gdefault
 
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 
-" 現在の行をハイライト
-set cursorline
-"上と合わせることで行番号のみハイライト
-hi clear CursorLine
+""""""""""""""""""""""""" 検索関連 """"""""""""""""""""""""""""""""""""""""
 
-"改行時に次の行のインデントを増減する
-set smartindent
+" 検索時に大文字小文字を区別しない
+set ignorecase
 
 "検索結果をすべてハイライト
 set hlsearch
@@ -44,14 +52,17 @@ set hlsearch
 "ハイライト解除
 noremap <Esc><Esc> :noh<CR>
 
-set pyxversion=3
-
+""""""""""""""""""""""""" キーバインド """"""""""""""""""""""""""""""""""""""""
+" 実際の行移動ではなく表示上の行移動
 noremap j gj
 noremap k gk
+" HHKBで:は打ちにくい
 noremap ; :
 noremap : ;
+" 行の途中で改行可能に
 noremap <CR> A<CR><ESC>
 
+" Ctrl + jでもESCしたい
 noremap! <C-j> <Esc>
 noremap <C-j> :noh<CR>
 
@@ -69,7 +80,7 @@ inoremap <C-a> <Esc><S-i>
 noremap <C-e> <Esc>$
 noremap <C-a> <Esc>^
 
-"縛りプレイ
+"十時キーはいらないんや
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <Down> <Nop>
@@ -138,7 +149,7 @@ if dein#check_install()
 endif
 
 
-""""""""""""""""""""""""" dein.rc.vim """"""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""" dein.vim """"""""""""""""""""""""""""""""""""""""
 
 " DeinClean command
 command! -bang DeinClean call s:dein_clean(<bang>0)
@@ -183,6 +194,8 @@ function! s:input(...) abort "{{{
 endfunction "}}}
 
 """"""""""""""""""""""""" deoplete.vim"""""""""""""""""""""""""""""""
+" python3を有効化
+set pyxversion=3
 " " NeoCompleteを有効にする
 let g:deoplete#enable_at_startup = 1
 " " 補完が自動で開始される文字数
