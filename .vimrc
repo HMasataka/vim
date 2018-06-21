@@ -3,8 +3,10 @@ set number
 
 " タブを表示するときの幅
 set tabstop=4
-" " タブを挿入するときの幅
+
+" タブを挿入するときの幅
 set shiftwidth=4
+" tabの代わりに半角スペース
 set expandtab
 
 "ステータスバーを常に表示
@@ -12,11 +14,33 @@ set laststatus=2
 
 "改行時に前の行のインデントを継続する
 set autoindent
-"改行時に入力された行の末尾に合わせて次の行のインデントを増減する
+
+" スワップファイルを作らない
+set noswapfile
+
+" マウス有効化
+set mouse=a
+
+" 検索時に大文字小文字を区別しない
+set ignorecase
+
+" 置換の際のgオプションをデフォルトで有効化する
+set gdefault
+
+" 編集中のファイルが変更されたら自動で読み直す
+set autoread
+
+" 現在の行をハイライト
+set cursorline
+"上と合わせることで行番号のみハイライト
+hi clear CursorLine
+
+"改行時に次の行のインデントを増減する
 set smartindent
 
 "検索結果をすべてハイライト
 set hlsearch
+
 "ハイライト解除
 noremap <Esc><Esc> :noh<CR>
 
@@ -71,6 +95,8 @@ noremap su gT
 
 "末尾の空白削除
 noremap <F2> :%s/\s\s*$<CR>
+
+" dein.vim
 if &compatible
   set nocompatible
 endif
@@ -102,6 +128,8 @@ call dein#add('tmhedberg/matchit')
 call dein#add('othree/html5.vim')
 call dein#add('nvie/vim-flake8')
 call dein#add('simeji/winresizer')
+call dein#add('tomtom/tcomment_vim')
+
 
 call dein#end()
 
@@ -206,7 +234,6 @@ let g:gundo_prefer_python3 = 1
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '|'
-
 
 """"""""""""""""""""""""""""""airline"""""""""""""""""""""""""""""""""""
 let g:airline_enable_branch = 0
