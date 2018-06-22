@@ -4,13 +4,16 @@
 set number
 
 " 現在の行をハイライト
-set cursorline
+" set cursorline
 
-"上と合わせることで行番号のみハイライト
-hi clear CursorLine
+" 上と合わせることで行番号のみハイライト
+" hi clear CursorLine
 
 "ステータスバーを常に表示
 set laststatus=2
+
+" スクロール時の余白
+set scrolloff=4
 
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
 
@@ -80,7 +83,7 @@ inoremap <C-a> <Esc><S-i>
 noremap <C-e> <Esc>$
 noremap <C-a> <Esc>^
 
-"十時キーはいらないんや
+"十字キーはいらないんや
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <Down> <Nop>
@@ -126,7 +129,8 @@ if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
 endif
-call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/denite.nvim')
+call dein#add('Shougo/neomru.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
@@ -134,8 +138,6 @@ call dein#add('bling/vim-airline')
 call dein#add('hail2u/vim-css3-syntax')
 call dein#add('pangloss/vim-javascript')
 call dein#add('mattn/emmet-vim')
-call dein#add('AtsushiM/search-parent.vim')
-call dein#add('tmhedberg/matchit')
 call dein#add('othree/html5.vim')
 call dein#add('nvie/vim-flake8')
 call dein#add('simeji/winresizer')
@@ -219,13 +221,11 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 
 """""""""""""""""""""""""""" unite.vim""""""""""""""""""""""""""""""""""""
-" 入力モードで開始する
-"let g:unite_enable_start_insert=1
-" バッファ一覧
-noremap <silent> <space>b :<C-u>Unite buffer<CR>
 " 最近使用したファイル一覧
-noremap <silent> <space>s :<C-u>Unite file_mru<CR>
-
+noremap <silent> <space>s :<C-u>Denite file_mru<CR>
+nnoremap <silent> / :<C-u>Denite -buffer-name=search -auto-resize line<CR>
+call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
 
 """""""""""""""""""""""""""""""NERDTree""""""""""""""""""""""""""""""""""""
 ""起動
