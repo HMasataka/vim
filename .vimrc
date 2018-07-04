@@ -1,13 +1,6 @@
-""""""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
-
+""""""""""""""""""""""""" 表示関連 """""""""""""""""""""""""""""""""""""""" 
 "行数表示
 set number
-
-" 現在の行をハイライト
-" set cursorline
-
-" 上と合わせることで行番号のみハイライト
-" hi clear CursorLine
 
 "ステータスバーを常に表示
 set laststatus=2
@@ -36,7 +29,7 @@ set smartindent
 set noswapfile
 
 " マウス有効化
-set mouse=a
+" set mouse=a
 
 " 置換の際のgオプションをデフォルトで有効化する
 set gdefault
@@ -80,8 +73,8 @@ let &t_te.="\e[0 q"
 "行頭（^)と行末($)にカーソルを移動
 inoremap <C-e> <Esc><S-a>
 inoremap <C-a> <Esc><S-i>
-noremap <C-e> <Esc>$
-noremap <C-a> <Esc>^
+noremap <C-e> $
+noremap <C-a> ^
 
 "十字キーはいらないんや
 inoremap <Left> <Nop>
@@ -131,6 +124,7 @@ if !has('nvim')
 endif
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
+call dein#add('Shougo/neoyank.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
@@ -142,7 +136,6 @@ call dein#add('othree/html5.vim')
 call dein#add('nvie/vim-flake8')
 call dein#add('simeji/winresizer')
 call dein#add('tomtom/tcomment_vim')
-
 
 call dein#end()
 
@@ -220,9 +213,11 @@ let g:deoplete#max_list = 20
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 
-"""""""""""""""""""""""""""" unite.vim""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""" denite.vim""""""""""""""""""""""""""""""""""""
 " 最近使用したファイル一覧
 noremap <silent> <space>s :<C-u>Denite file_mru<CR>
+noremap <silent> <space>a :<C-u>Denite file_rec<CR>
+noremap <silent> <C-s> :<C-u>Denite neoyank<CR>
 nnoremap <silent> / :<C-u>Denite -buffer-name=search -auto-resize line<CR>
 call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
@@ -232,10 +227,10 @@ call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
 noremap <silent> <space>n :NERDTree<CR>
 
 ""起動時にNERDTreeを表示
-autocmd vimenter * NERDTree
-""ファイル名が指定されてVIMが起動した場合はNERDTreeを表示しない
+""ファイル名が指定されてvimが起動した場合はNERDTreeを表示しない
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() != 0 && !exists("s:std_in") | q | endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 ""不可視ファイル
 let NERDTreeShowHidden = 1
 
@@ -292,10 +287,11 @@ augroup EmmitVim
   autocmd FileType * let g:user_emmet_settings.indentation = '               '[:&tabstop]
 augroup END
 
-set t_Co=256
+""""""""""""""""""""""""" winresizer.vim """"""""""""""""""""""""""""""""""""""""
+let g:winresizer_start_key = '<C-q>'
 
+set t_Co=256
 syntax on
 
 "カラースキーマを自作のものに設定
 colorscheme mstn2
-
