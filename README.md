@@ -14,11 +14,6 @@ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh >
 sh ./installer.sh ~/.vim/dein
 ```
 
-# luaインストール
-```
-sudo apt-get install vim-gnome
-```
-
 # deocompleteの有効化
 ```
 pip3 install neovim
