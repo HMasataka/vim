@@ -1,4 +1,5 @@
-""""""""""""""""""""""""" 表示関連 """""""""""""""""""""""""""""""""""""""" 
+""""""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
+
 "行数表示
 set number
 
@@ -9,6 +10,8 @@ set laststatus=2
 set scrolloff=4
 
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
+" eコマンドでファイルを切り替える時に未保存でも切り替えられる
+set hidden
 
 " tabの代わりに半角スペース
 set expandtab
@@ -37,6 +40,8 @@ set gdefault
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
 
+" undo file を保存
+set undofile
 """"""""""""""""""""""""" 検索関連 """"""""""""""""""""""""""""""""""""""""
 
 " 検索時に大文字小文字を区別しない
@@ -125,7 +130,7 @@ endif
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
-call dein#add('scrooloose/nerdtree')
+" call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('bling/vim-airline')
@@ -191,24 +196,19 @@ endfunction "}}}
 """"""""""""""""""""""""" deoplete.vim"""""""""""""""""""""""""""""""
 " python3を有効化
 set pyxversion=3
-" " NeoCompleteを有効にする
+" " deopleteを有効にする
 let g:deoplete#enable_at_startup = 1
-" " 補完が自動で開始される文字数
-let g:deoplete#auto_completion_start_length = 1
-" " smart case有効化。 大文字が入力されるまで大文字小文字の区別を無視する
-let g:deoplete#enable_smart_case = 1
-" " camle caseを有効化。大文字を区切りとしたワイルドカードのように振る舞う
-let g:deoplete#enable_camel_case_completion = 1
-" " _(アンダーバー)区切りの補完を有効化
-let g:deoplete#enable_underbar_completion = 1
-" " シンタックスをキャッシュするときの最小文字長を3に
-let g:deoplete#min_syntax_length = 3
-" " -入力による候補番号の表示
-let g:deoplete#enable_quick_match = 1
-" " 補完候補の一番先頭を選択状態にする(AutoComplPopと似た動作)
-let g:deoplete#enable_auto_select = 1
-" "ポップアップメニューで表示される候補の数。初期値は100
-let g:deoplete#max_list = 20
+
+" 予測を表示する際のdelay[msec]
+call deoplete#custom#option('auto_complete_delay', 0)
+" 大文字小文字を区別しない
+call deoplete#custom#option('camel_case', 1)
+" ポップアップメニューで表示される候補の数。初期値は500
+call deoplete#custom#option('max_list', 20)
+" 補完が自動で開始される文字数
+call deoplete#custom#option('min_pattern_length', 1)
+" 補完候補の一番先頭を選択状態にする
+set completeopt+=noinsert
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
@@ -216,23 +216,26 @@ inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 """""""""""""""""""""""""""" denite.vim""""""""""""""""""""""""""""""""""""
 " 最近使用したファイル一覧
 noremap <silent> <space>s :<C-u>Denite file_mru<CR>
+" カレントディレクトリ検索
 noremap <silent> <space>a :<C-u>Denite file_rec<CR>
+" yank履歴
 noremap <silent> <C-s> :<C-u>Denite neoyank<CR>
+" 検索をdeniteに切り替え
 nnoremap <silent> / :<C-u>Denite -buffer-name=search -auto-resize line<CR>
 call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
 
 """""""""""""""""""""""""""""""NERDTree""""""""""""""""""""""""""""""""""""
-""起動
-noremap <silent> <space>n :NERDTree<CR>
-
-""起動時にNERDTreeを表示
-""ファイル名が指定されてvimが起動した場合はNERDTreeを表示しない
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-
-""不可視ファイル
-let NERDTreeShowHidden = 1
+" ""起動
+" noremap <silent> <space>n :NERDTree<CR>
+"
+" ""起動時にNERDTreeを表示
+" ""ファイル名が指定されてvimが起動した場合はNERDTreeを表示しない
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"
+" ""不可視ファイル
+" let NERDTreeShowHidden = 1
 
 """"""""""""""""""""""""""""""Gundo"""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
