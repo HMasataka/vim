@@ -1,4 +1,8 @@
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
+" TODO
+" snipet系のプラグイン導入
+" git系のプラグイン導入
+""""""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
 
 "行数表示
 set number
@@ -9,8 +13,11 @@ set laststatus=2
 " スクロール時の余白
 set scrolloff=4
 
+" 入力中のコマンド表示
+set showcmd
+
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
-" eコマンドでファイルを切り替える時に未保存でも切り替えられる
+" ファイルを切り替える時に未保存でも切り替えられる
 set hidden
 
 " tabの代わりに半角スペース
@@ -28,7 +35,7 @@ set autoindent
 "改行時に次の行のインデントを増減する
 set smartindent
 
-" スワップファイルを作らない
+" 役立たずのスワップファイルを作らない
 set noswapfile
 
 " マウス有効化
@@ -42,6 +49,10 @@ set autoread
 
 " undo file を保存
 set undofile
+
+" コマンドラインモードでTabキー補完
+set wildmenu
+
 """"""""""""""""""""""""" 検索関連 """"""""""""""""""""""""""""""""""""""""
 
 " 検索時に大文字小文字を区別しない
@@ -54,12 +65,15 @@ set hlsearch
 noremap <Esc><Esc> :noh<CR>
 
 """"""""""""""""""""""""" キーバインド """"""""""""""""""""""""""""""""""""""""
+
 " 実際の行移動ではなく表示上の行移動
 noremap j gj
 noremap k gk
+
 " HHKBで:は打ちにくい
 noremap ; :
 noremap : ;
+
 " 行の途中で改行可能に
 noremap <CR> A<CR><ESC>
 
@@ -108,7 +122,11 @@ noremap su gT
 "末尾の空白削除
 noremap <F2> :%s/\s\s*$<CR>
 
-" dein.vim
+" tagジャンプが遠かった
+noremap go %
+
+""""""""""""""""""""""""" dein.vim plugins """"""""""""""""""""""""""""""""""""""""
+
 if &compatible
   set nocompatible
 endif
@@ -141,13 +159,13 @@ call dein#add('othree/html5.vim')
 call dein#add('nvie/vim-flake8')
 call dein#add('simeji/winresizer')
 call dein#add('tomtom/tcomment_vim')
+call dein#add('terryma/vim-multiple-cursors')
 
 call dein#end()
 
 if dein#check_install()
   call dein#install()
 endif
-
 
 """"""""""""""""""""""""" dein.vim """"""""""""""""""""""""""""""""""""""""
 
@@ -194,13 +212,14 @@ function! s:input(...) abort "{{{
 endfunction "}}}
 
 """"""""""""""""""""""""" deoplete.vim"""""""""""""""""""""""""""""""
+
 " python3を有効化
 set pyxversion=3
 " " deopleteを有効にする
 let g:deoplete#enable_at_startup = 1
 
 " 予測を表示する際のdelay[msec]
-call deoplete#custom#option('auto_complete_delay', 0)
+call deoplete#custom#option('auto_complete_delay', 1)
 " 大文字小文字を区別しない
 call deoplete#custom#option('camel_case', 1)
 " ポップアップメニューで表示される候補の数。初期値は500
@@ -214,6 +233,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 
 """""""""""""""""""""""""""" denite.vim""""""""""""""""""""""""""""""""""""
+
 " 最近使用したファイル一覧
 noremap <silent> <space>s :<C-u>Denite file_mru<CR>
 " カレントディレクトリ検索
@@ -226,6 +246,7 @@ call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
 
 """""""""""""""""""""""""""""""NERDTree""""""""""""""""""""""""""""""""""""
+
 " ""起動
 " noremap <silent> <space>n :NERDTree<CR>
 "
@@ -238,15 +259,18 @@ call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
 " let NERDTreeShowHidden = 1
 
 """"""""""""""""""""""""""""""Gundo"""""""""""""""""""""""""""""""""""
+
 nnoremap <F5> :GundoToggle<CR>
 let g:gundo_prefer_python3 = 1
 
 """"""""""""""""""""""""""""""indentline"""""""""""""""""""""""""""""""""""
+
 let g:indentLine_color_term = 111
 let g:indentLine_color_gui = '#708090'
 let g:indentLine_char = '|'
 
 """"""""""""""""""""""""""""""airline"""""""""""""""""""""""""""""""""""
+
 let g:airline_enable_branch = 0
 let g:airline_section_b = "%t %M"
 let g:airline_section_c = ''
@@ -269,6 +293,7 @@ let g:airline#extensions#tabline#tab_nr_type = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 """"""""""""""""""""""""""""""emmet"""""""""""""""""""""""""""""""""""
+
 let g:user_emmet_mode = 'iv'
 let g:user_emmet_leader_key = '<C-Y>'
 let g:use_emmet_complete_tag = 1
@@ -291,7 +316,17 @@ augroup EmmitVim
 augroup END
 
 """"""""""""""""""""""""" winresizer.vim """"""""""""""""""""""""""""""""""""""""
+
 let g:winresizer_start_key = '<C-q>'
+
+""""""""""""""""""""""""" scripts """"""""""""""""""""""""""""""""""""""""
+" 最後のカーソル位置を復元する
+autocmd BufReadPost *
+\ if line("'\"") > 0 && line ("'\"") <= line("$") |
+\   exe "normal! g'\"" |
+\ endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set t_Co=256
 syntax on
