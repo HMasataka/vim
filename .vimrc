@@ -346,8 +346,11 @@ set updatetime=250
 set signcolumn=yes
 " Gstatus
 noremap gs :Gstatus<CR>
-" Gstatus
+" Gdiff
 noremap gf :Gdiff<CR>
+" Gpush
+" TODO 現在の状態を取得してそこをデフォルトに
+noremap gp :Git push origin 
 
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
 noremap gh :GitGutterNextHunk<CR>
