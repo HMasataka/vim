@@ -116,7 +116,11 @@ noremap sh <C-w>h
 noremap sj <C-w>j
 noremap sk <C-w>k
 noremap sl <C-w>l
-noremap sw <C-w>w
+
+noremap sH <C-w>H
+noremap sJ <C-w>J
+noremap sK <C-w>K
+noremap sL <C-w>L
 
 noremap st :tabnew<CR>
 noremap sn gt
@@ -343,7 +347,6 @@ noremap gs :Gstatus<CR>
 noremap gf :Gdiff<CR>
 
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
-
 noremap gh :GitGutterNextHunk<CR>
 noremap gH :GitGutterPrevHunk<CR>
 
