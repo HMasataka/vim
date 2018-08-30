@@ -344,8 +344,8 @@ noremap gf :Gdiff<CR>
 
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
 
-nmap gh <Plug>GitGutterNextHunk
-nmap gH <Plug>GitGutterPrevHunk
+noremap gh :GitGutterNextHunk<CR>
+noremap gH :GitGutterPrevHunk<CR>
 
 """"""""""""""""""""""""" scripts """"""""""""""""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
