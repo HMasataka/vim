@@ -1,7 +1,6 @@
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
 " TODO
 " snipet系のプラグイン導入
-" git系のプラグイン導入
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
 
 "行数表示
@@ -129,6 +128,14 @@ noremap <F2> :%s/\s\s*$<CR>
 " tagジャンプが遠かった
 noremap go %
 
+" カッコを入力した時に間に戻る
+inoremap {} {}<LEFT>
+inoremap [] []<LEFT>
+inoremap () ()<LEFT>
+inoremap "" ""<LEFT>
+inoremap '' ''<LEFT>
+inoremap <> <><LEFT>
+
 """"""""""""""""""""""""" dein.vim plugins """"""""""""""""""""""""""""""""""""""""
 
 if &compatible
@@ -164,6 +171,8 @@ call dein#add('nvie/vim-flake8')
 call dein#add('simeji/winresizer')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('terryma/vim-multiple-cursors')
+call dein#add('tpope/vim-fugitive')
+call dein#add('airblade/vim-gitgutter')
 
 call dein#end()
 
@@ -322,6 +331,21 @@ augroup END
 """"""""""""""""""""""""" winresizer.vim """"""""""""""""""""""""""""""""""""""""
 
 let g:winresizer_start_key = '<C-q>'
+
+"""""""""""""""""""""""""gitgutter""""""""""""""""""""""""""""""""""""""""
+" 更新のタイミングを早く デフォルトは4000ms
+set updatetime=250
+" 画面のガタガタ防止
+set signcolumn=yes
+" Gstatus
+noremap gs :Gstatus<CR>
+" Gstatus
+noremap gf :Gdiff<CR>
+
+"""""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
+
+nmap gh <Plug>GitGutterNextHunk
+nmap gH <Plug>GitGutterPrevHunk
 
 """"""""""""""""""""""""" scripts """"""""""""""""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
