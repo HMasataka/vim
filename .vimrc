@@ -185,6 +185,7 @@ call dein#add('terryma/vim-multiple-cursors')
 call dein#add('tpope/vim-fugitive')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-surround')
+call dein#add("vim-scripts/vim-auto-save")
 
 call dein#end()
 
@@ -360,6 +361,9 @@ noremap gp :Git push origin
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
 noremap gh :GitGutterNextHunk<CR>
 noremap gH :GitGutterPrevHunk<CR>
+
+""""""""""""""""""""""""" auto-save """"""""""""""""""""""""""""""""""""""""
+let g:auto_save = 1
 
 """"""""""""""""""""""""" scripts """"""""""""""""""""""""""""""""""""""""
 " 最後のカーソル位置を復元する
