@@ -15,6 +15,10 @@ set scrolloff=4
 " 入力中のコマンド表示
 set showcmd
 
+" スペルチェック
+set spelllang+=cjk
+set spell
+
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
 " ファイルを切り替える時に未保存でも切り替えられる
 set hidden
@@ -180,6 +184,7 @@ call dein#add('tomtom/tcomment_vim')
 call dein#add('terryma/vim-multiple-cursors')
 call dein#add('tpope/vim-fugitive')
 call dein#add('airblade/vim-gitgutter')
+call dein#add('tpope/vim-surround')
 
 call dein#end()
 
