@@ -378,4 +378,4 @@ set t_Co=256
 syntax on
 
 "カラースキーマを自作のものに設定
-colorscheme mstn2
+colorscheme mstn3

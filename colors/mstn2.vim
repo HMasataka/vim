@@ -14,7 +14,7 @@ hi Normal                   ctermfg=255
 hi Statement                ctermfg=26
 hi Operator                 ctermfg=31
 
-" 文字列、数字、ture or false
+" 文字列、数字、true or false
 hi Constant                 ctermfg=155
 hi Number                   ctermfg=80
 hi Boolean                  ctermfg=86
@@ -54,4 +54,3 @@ hi Search       ctermbg=5   ctermfg=15
 hi SpellBad     ctermbg=88
 hi SpellCap     ctermbg=88
 hi SpellRare    ctermbg=88
-
