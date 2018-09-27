@@ -114,7 +114,7 @@ inoremap <Up> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Down> <Nop>
-noremap <Up> <Nop>
+noremap <Up> <nop>
 
 "画面分割関連
 noremap ss :split<CR>
@@ -140,12 +140,19 @@ noremap <F2> :%s/\s\s*$<CR>
 noremap go %
 
 " カッコを入力した時に間に戻る
-inoremap {} {}<LEFT>
-inoremap [] []<LEFT>
-inoremap () ()<LEFT>
-inoremap "" ""<LEFT>
-inoremap '' ''<LEFT>
-inoremap <> <><LEFT>
+inoremap { {}<LEFT>
+inoremap [ []<LEFT>
+inoremap ( ()<LEFT>
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+inoremap < <><LEFT>
+
+inoremap {} {}<Esc><RIGHT>i
+inoremap [] []<Esc><RIGHT>i
+inoremap () ()<Esc><RIGHT>i
+inoremap "" ""<Esc><RIGHT>i
+inoremap '' ''<Esc><RIGHT>i
+inoremap <> <><Esc><RIGHT>i
 
 """"""""""""""""""""""""" dein.vim plugins """"""""""""""""""""""""""""""""""""""""
 
