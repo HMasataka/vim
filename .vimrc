@@ -19,6 +19,10 @@ set showcmd
 set spelllang+=cjk
 set spell
 
+" 現在の行の行番号をハイライト
+set cursorline
+hi clear CursorLine
+
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
 " ファイルを切り替える時に未保存でも切り替えられる
 set hidden
