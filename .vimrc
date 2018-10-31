@@ -21,7 +21,6 @@ set spell
 
 " 現在の行の行番号をハイライト
 set cursorline
-hi clear CursorLine
 
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
 " ファイルを切り替える時に未保存でも切り替えられる
@@ -174,6 +173,17 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 
 call dein#add('Shougo/deoplete.nvim')
+
+"" deoplete extension plugins
+" completion vim command
+call dein#add('Shougo/neco-vim')
+" completion from syntaxfile
+call dein#add('Shougo/neco-syntax')
+" completion English word from look function
+call dein#add('ujihisa/neco-look')
+" completion python function
+call dein#add('zchee/deoplete-jedi')
+
 if !has('nvim')
   call dein#add('roxma/nvim-yarp')
   call dein#add('roxma/vim-hug-neovim-rpc')
