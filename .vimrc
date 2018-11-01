@@ -1,114 +1,115 @@
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
 " TODO
-" snipet系のプラグイン導入
+" snipet plugin
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
 
-"行数表示
+" display number of line
 set number
 
-"ステータスバーを常に表示
+" always display status bar
 set laststatus=2
 
-" スクロール時の余白
+" scroll margin
 set scrolloff=4
 
-" 入力中のコマンド表示
+" display command during input
 set showcmd
 
-" スペルチェック
+" spell check
 set spelllang+=cjk
 set spell
 
-" 現在の行の行番号をハイライト
+" highlight the line number of the current line
 set cursorline
 
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
-" ファイルを切り替える時に未保存でも切り替えられる
+" switching file without save
 set hidden
 
-" tabの代わりに半角スペース
+" space instead of tab
 set expandtab
 
-" タブを表示するときの幅
+" display tab width
 set tabstop=4
 
-" タブを挿入するときの幅
+" input tab width
 set shiftwidth=4
 
-"改行時に前の行のインデントを継続する
+" continue indentation of previous line at line feed
 set autoindent
-
-"改行時に次の行のインデントを増減する
 set smartindent
 
-" 役立たずのスワップファイルを作らない
+" do not create swapfile
 set noswapfile
 
-" マウス有効化
+" mouse activation
 " set mouse=a
 
-" 置換の際のgオプションをデフォルトで有効化する
+" by default, g option for replacement is enabled
 set gdefault
 
-" 編集中のファイルが変更されたら自動で読み直す
+" automatically reload when the file being edited is changed
 set autoread
 
-" undo file を保存
+" save undofile
 set undofile
 
-" コマンドラインモードでTabキー補完
+" tab key completion in command line mode
 set wildmenu
 
-" 行末の1文字先までカーソルを移動できるように
+" move the cursor to the end of the line one character ahead
 set virtualedit=onemore
 
 
 """"""""""""""""""""""""" 検索関連 """"""""""""""""""""""""""""""""""""""""
 
-" 検索時に大文字小文字を区別しない
+" do not distinguish upper or lower when searching
 set ignorecase
 
-"検索結果をすべてハイライト
+" highlight all search results
 set hlsearch
 
-"ハイライト解除
+" unhighlight
 noremap <Esc><Esc> :noh<CR>
 
 """"""""""""""""""""""""" キーバインド """"""""""""""""""""""""""""""""""""""""
 
-" 数字のインクリメント
+" increment number
 noremap <C-c> <C-a>
 
-" 実際の行移動ではなく表示上の行移動
+" movement on display instead of actual line
 noremap j gj
 noremap k gk
 
-" HHKBで:は打ちにくい
+" switching ; :
 noremap ; :
 noremap : ;
 
-" 行の途中で改行可能に
+" make line break possible in the middle of the line
 noremap <CR> A<CR><ESC>
 
-" Ctrl + jでもESCしたい
+" Ctrl+j associate to ESC
 noremap! <C-j> <Esc>
 noremap <C-j> :noh<CR>
 
+" Ctrl+l associate to Right arrow
 inoremap <C-l> <Right>
 
-" Insertモードのときカーソルの形状を変更
+" change cursor shape when insert mode
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
 
-"行頭（^)と行末($)にカーソルを移動
+" move the cursor to end of line by Ctrl+e
 inoremap <C-e> <Esc><S-a>
-inoremap <C-a> <Esc><S-i>
 noremap <C-e> $
+
+" move the cursor to begin of line by Ctrl+a
+inoremap <C-a> <Esc><S-i>
 noremap <C-a> ^
 
-"十字キーはいらないんや
+" don't use arrow key
 inoremap <Left> <Nop>
 inoremap <Right> <Nop>
 inoremap <Down> <Nop>
@@ -119,7 +120,7 @@ noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Up> <nop>
 
-"画面分割関連
+" splitting screen
 noremap ss :split<CR>
 noremap sv :vsplit<CR>
 noremap sh <C-w>h
@@ -127,22 +128,24 @@ noremap sj <C-w>j
 noremap sk <C-w>k
 noremap sl <C-w>l
 
+" moving screen
 noremap sH <C-w>H
 noremap sJ <C-w>J
 noremap sK <C-w>K
 noremap sL <C-w>L
 
+" tab
 noremap st :tabnew<CR>
 noremap sn gt
 noremap su gT
 
-"末尾の空白削除
+" tailing blanks removed
 noremap <F2> :%s/\s\s*$<CR>
 
-" tagジャンプが遠かった
+" tag jump
 noremap go %
 
-" カッコを入力した時に間に戻る
+" bracket
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
@@ -191,7 +194,6 @@ endif
 call dein#add('Shougo/denite.nvim')
 call dein#add('Shougo/neomru.vim')
 call dein#add('Shougo/neoyank.vim')
-" call dein#add('scrooloose/nerdtree')
 call dein#add('sjl/gundo.vim')
 call dein#add('Yggdroot/indentLine')
 call dein#add('bling/vim-airline')
@@ -260,20 +262,20 @@ endfunction "}}}
 
 """"""""""""""""""""""""" deoplete.vim"""""""""""""""""""""""""""""""
 
-" python3を有効化
+" activate python3
 set pyxversion=3
-" " deopleteを有効にする
+" activate deoplete by default
 let g:deoplete#enable_at_startup = 1
 
-" 予測を表示する際のdelay[msec]
+" delay when displaying completion[msec]
 call deoplete#custom#option('auto_complete_delay', 1)
-" 大文字小文字を区別しない
+" do not distinguish upper or lower when completion
 call deoplete#custom#option('camel_case', 1)
-" ポップアップメニューで表示される候補の数。初期値は500
+" number of candidates displayed in the pop-up mene. default 500
 call deoplete#custom#option('max_list', 20)
-" 補完が自動で開始される文字数
+" number of characters to be completed
 call deoplete#custom#option('min_pattern_length', 1)
-" 補完候補の一番先頭を選択状態にする
+" selects the first position of the completion candidate
 set completeopt+=noinsert
 
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -281,29 +283,16 @@ inoremap <expr><CR> pumvisible() ? deoplete#close_popup() :"\<CR>"
 
 """""""""""""""""""""""""""" denite.vim""""""""""""""""""""""""""""""""""""
 
-" 最近使用したファイル一覧
+" recently used files list
 noremap <silent> <space>s :<C-u>Denite file_mru<CR>
-" カレントディレクトリ検索
+" current directory
 noremap <silent> <space>a :<C-u>Denite file_rec<CR>
-" yank履歴
+" yank history
 noremap <silent> <C-s> :<C-u>Denite neoyank<CR>
-" 検索をdeniteに切り替え
+" denite associate to search
 nnoremap <silent> / :<C-u>Denite -buffer-name=search -auto-resize line<CR>
-call denite#custom#map('insert', "<C-j>", '<denite:move_to_next_line>')
+call denite#custom#map('insert', "<C-n>", '<denite:move_to_next_line>')
 call denite#custom#map('insert', "<C-k>", '<denite:move_to_previous_line>')
-
-"""""""""""""""""""""""""""""""NERDTree""""""""""""""""""""""""""""""""""""
-
-" ""起動
-" noremap <silent> <space>n :NERDTree<CR>
-"
-" ""起動時にNERDTreeを表示
-" ""ファイル名が指定されてvimが起動した場合はNERDTreeを表示しない
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"
-" ""不可視ファイル
-" let NERDTreeShowHidden = 1
 
 """"""""""""""""""""""""""""""Gundo"""""""""""""""""""""""""""""""""""
 
@@ -330,13 +319,13 @@ let g:airline_section_y = '%3p%%'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 let g:airline#extensions#whitespace#enabled = 0
 
-" タブラインにもairlineを適用
+" apply airline to tablines
 let g:airline#extensions#tabline#enabled = 1
-" （タブが一個の場合）バッファのリストをタブラインに表示する機能をオフ
+" when there is only one tab, Turn off the function to display the list of buffers on tablines
 let g:airline#extensions#tabline#show_buffers = 0
-" 0でそのタブで開いてるウィンドウ数、1で左のタブから連番
+" 0, the number of open windows on that tab, 1 means the number of consecutive numbers from the left tab
 let g:airline#extensions#tabline#tab_nr_type = 1
-" タブに表示する名前（fnamemodifyの第二引数）
+" display name in tablines
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 """"""""""""""""""""""""""""""emmet"""""""""""""""""""""""""""""""""""
@@ -367,9 +356,9 @@ augroup END
 let g:winresizer_start_key = '<C-q>'
 
 """""""""""""""""""""""""gitgutter""""""""""""""""""""""""""""""""""""""""
-" 更新のタイミングを早く デフォルトは4000ms
+" make the update timing faster. defalult 4000ms
 set updatetime=250
-" 画面のガタガタ防止
+" anti alias
 set signcolumn=yes
 " Gstatus
 noremap gs :Gstatus<CR>
@@ -387,7 +376,7 @@ noremap gH :GitGutterPrevHunk<CR>
 let g:auto_save = 1
 
 """"""""""""""""""""""""" scripts """"""""""""""""""""""""""""""""""""""""
-" 最後のカーソル位置を復元する
+" Restore the last cursor position when opening a file
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
@@ -398,5 +387,5 @@ autocmd BufReadPost *
 set t_Co=256
 syntax on
 
-"カラースキーマを自作のものに設定
+" set up my color scheme
 colorscheme mstn3
