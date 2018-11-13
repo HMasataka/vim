@@ -23,6 +23,12 @@ set spell
 set cursorline
 
 """"""""""""""""""""""""" 編集関連 """"""""""""""""""""""""""""""""""""""""
+" use backspace
+set backspace=indent,eol,start
+
+" use backup directory
+set directory=~/tmp/vim
+
 " switching file without save
 set hidden
 
@@ -145,20 +151,6 @@ noremap <F2> :%s/\s\s*$<CR>
 " tag jump
 noremap go %
 
-" bracket
-inoremap { {}<LEFT>
-inoremap [ []<LEFT>
-inoremap ( ()<LEFT>
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-inoremap < <><LEFT>
-
-inoremap {} {}<Esc><RIGHT>i
-inoremap [] []<Esc><RIGHT>i
-inoremap () ()<Esc><RIGHT>i
-inoremap "" ""<Esc><RIGHT>i
-inoremap '' ''<Esc><RIGHT>i
-inoremap <> <><Esc><RIGHT>i
 
 """"""""""""""""""""""""" dein.vim plugins """"""""""""""""""""""""""""""""""""""""
 
