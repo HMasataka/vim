@@ -202,6 +202,11 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-surround')
 call dein#add("vim-scripts/vim-auto-save")
 
+" replace by text object
+call dein#add('kana/vim-operator-replace.git')
+call dein#add('kana/vim-operator-user.git')
+map R  <Plug>(operator-replace)
+
 call dein#end()
 
 if dein#check_install()
