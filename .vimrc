@@ -393,6 +393,11 @@ augroup vimrc-checktime
   autocmd CursorMoved * checktime
 augroup END
 
+augroup load-json
+  autocmd!
+  autocmd FileType json set conceallevel=0
+augroup END
+
 set t_Co=256
 syntax on
 
