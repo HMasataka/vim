@@ -26,9 +26,17 @@ set cursorline
 " use backspace
 set backspace=indent,eol,start
 
-" use backup directory
-set directory=/var/tmp
-set undodir=/var/tmp
+" backup
+set backup
+set backupdir=~/.vim/tmp
+
+" dont create swap file
+set noswapfile
+set directory=~/.vim/tmp
+
+" save undofile
+set undofile
+set undodir=~/.vim/tmp
 
 " switching file without save
 set hidden
@@ -46,20 +54,17 @@ set shiftwidth=4
 set autoindent
 set smartindent
 
-" do not create swapfile
-set noswapfile
+" window size
+set noequalalways
+
+" num : history
+set history=50
 
 " mouse activation
 " set mouse=a
 
 " by default, g option for replacement is enabled
 set gdefault
-
-" automatically reload when the file being edited is changed
-set autoread
-
-" save undofile
-set undofile
 
 " tab key completion in command line mode
 set wildmenu
@@ -364,7 +369,7 @@ noremap gs :Gstatus<CR>
 noremap gf :Gdiff<CR>
 " Gpush
 " TODO 現在の状態を取得してそこをデフォルトに
-noremap gp :Git push origin 
+noremap gp :Git push origin
 
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
 noremap gh :GitGutterNextHunk<CR>
