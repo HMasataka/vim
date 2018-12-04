@@ -27,7 +27,8 @@ set cursorline
 set backspace=indent,eol,start
 
 " use backup directory
-set directory=~/tmp/vim
+set directory=/var/tmp
+set undodir=/var/tmp
 
 " switching file without save
 set hidden
@@ -380,6 +381,12 @@ autocmd BufReadPost *
 \ endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set autoread
+augroup vimrc-checktime
+  autocmd!
+  autocmd CursorMoved * checktime
+augroup END
 
 set t_Co=256
 syntax on
