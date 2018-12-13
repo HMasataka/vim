@@ -154,6 +154,10 @@ noremap sL <C-w>L
 noremap st :tabnew<CR>
 noremap sn gt
 noremap su gT
+" s<N> jump to N tab
+for n in range(1, 9)
+    execute 'nnoremap <silent> s'.n ':<C-u>tabnext' .n.'<CR>'
+endfor
 
 " tailing blanks removed
 noremap <F2> :%s/\s\s*$<CR>
