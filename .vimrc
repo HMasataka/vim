@@ -89,6 +89,8 @@ set incsearch
 noremap <Esc><Esc> :noh<CR>
 
 """"""""""""""""""""""""" キーバインド """"""""""""""""""""""""""""""""""""""""
+" open link file
+noremap <space>n <C-w>gf
 
 " increment number
 noremap <C-c> <C-a>
