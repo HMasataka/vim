@@ -2,6 +2,8 @@
 " TODO
 " snipet plugin
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
+" no beep
+set belloff=all
 
 " display number of line
 set number
