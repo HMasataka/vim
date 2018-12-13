@@ -209,6 +209,7 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-surround')
 call dein#add("vim-scripts/vim-auto-save")
+call dein#add("terryma/vim-expand-region")
 
 " replace by text object
 call dein#add('kana/vim-operator-replace.git')
@@ -386,6 +387,10 @@ autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
 \   exe "normal! g'\"" |
 \ endif
+
+"""""""""""terryma/vim-expand-region"""""""""""""""""""""""""""""
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
