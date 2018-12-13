@@ -212,6 +212,7 @@ call dein#add('airblade/vim-gitgutter')
 call dein#add('tpope/vim-surround')
 call dein#add("vim-scripts/vim-auto-save")
 call dein#add("terryma/vim-expand-region")
+call dein#add("jacquesbh/vim-showmarks")
 
 " replace by text object
 call dein#add('kana/vim-operator-replace.git')
@@ -377,8 +378,8 @@ noremap gf :Gdiff<CR>
 noremap gp :Git push origin
 
 """""""""""""""""""""""""fugitive""""""""""""""""""""""""""""""""""""""""
-noremap gh :GitGutterNextHunk<CR>
-noremap gH :GitGutterPrevHunk<CR>
+noremap mh :GitGutterNextHunk<CR>
+noremap mH :GitGutterPrevHunk<CR>
 
 """"""""""""""""""""""""" auto-save """"""""""""""""""""""""""""""""""""""""
 let g:auto_save = 1
@@ -393,6 +394,14 @@ autocmd BufReadPost *
 """""""""""terryma/vim-expand-region"""""""""""""""""""""""""""""
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
+
+"""""""""""vim-showmarks"""""""""""
+augroup vimrc-showmarks
+  autocmd!
+  " autocmd VimEnter * DoShowMarks
+  autocmd VimLeavePre * delmarks!
+augroup END
+noremap <silent> <space>m :10PreviewMarks<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
