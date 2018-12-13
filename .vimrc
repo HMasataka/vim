@@ -2,6 +2,7 @@
 " TODO
 " snipet plugin
 """"""""""""""""""""""""" 表示関連 """"""""""""""""""""""""""""""""""""""""
+
 " no beep
 set belloff=all
 
@@ -85,10 +86,18 @@ set ignorecase
 set hlsearch
 set incsearch
 
+"""""""""""""""""""""""""terminal""""""""""""""""""""""""""""""""""""""""
+set splitbelow
+set termsize="5x4"
+tnoremap <Esc> <C-w>N
+augroup vim-terminal
+  autocmd!
+  autocmd VimEnter * 5split | terminal ++curwin
+augroup END
+
+"""""""""""""""""""""""""キーバインド  """"""""""""""""""""""""""""""""""""""""
 " unhighlight
 noremap <Esc><Esc> :noh<CR>
-
-""""""""""""""""""""""""" キーバインド """"""""""""""""""""""""""""""""""""""""
 " open link file
 noremap <space>n <C-w>gf
 
