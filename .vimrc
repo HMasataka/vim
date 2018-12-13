@@ -5,6 +5,7 @@
 
 " display number of line
 set number
+set relativenumber
 
 " always display status bar
 set laststatus=2
@@ -80,6 +81,7 @@ set ignorecase
 
 " highlight all search results
 set hlsearch
+set incsearch
 
 " unhighlight
 noremap <Esc><Esc> :noh<CR>
