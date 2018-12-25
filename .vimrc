@@ -257,4 +257,5 @@ noremap <F2> :%s/\s\s*$<CR>
 " tag jump
 noremap go %
 
+set t_Co=256
 colorscheme mstn3
