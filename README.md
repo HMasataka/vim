@@ -23,6 +23,7 @@ pip3 install neovim
 # Language Server の有効化
 ```
 pip3 install python-language-server
+go get -u github.com/sourcegraph/go-langserver
 ```
 ```
 cp ~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim/bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
