@@ -27,3 +27,12 @@ on_map = '<C-q>'
 repo = 'mattn/emmet-vim'
 on_ft = ['html']
 hook_source = '''exec 'source ' . g:rc_dir . '/emmet-vim.vim' '''
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown']
+hook_source = '''exec 'source ' . g:rc_dir . '/previm.vim' '''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown']
