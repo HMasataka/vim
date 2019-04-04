@@ -61,6 +61,9 @@ gd 定義元を新しいタブで開く
 ### winresizer
 \<C-q\> リサイズモード  
 
+### previm
+\<C-p\> markdownのpreview  
+
 ### emmet
 https://qiita.com/muran001/items/9ce24525b3285678acc3  
 
