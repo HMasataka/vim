@@ -1,0 +1,50 @@
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+if = '!has("nvim")'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if = '!has("nvim")'
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+bulid = 'bash install.sh'
+hook_add = '''exec 'source ' . g:rc_dir . '/LanguageClient-neovim.vim' '''
+
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
+hook_add = '''exec 'source ' . g:rc_dir . '/vim-expand-region.vim' '''
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-operator-replace'
+depend = ['kana/vim-operator-user']
+hook_add = '''
+    map R  <Plug>(operator-replace)
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''exec 'source ' . g:rc_dir . '/vim-easymotion.vim' '''
+
+[[plugins]]
+repo = 'bling/vim-airline'
+hook_add = '''exec 'source ' . g:rc_dir . '/vim-airline.vim' '''
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''exec 'source ' . g:rc_dir . '/indentLine.vim' '''
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+hook_add = '''exec 'source ' . g:rc_dir . '/vim-fugitive.vim' '''
+
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+hook_add = '''exec 'source ' . g:rc_dir . '/vim-gitgutter.vim' '''

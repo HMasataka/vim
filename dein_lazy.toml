@@ -1,0 +1,29 @@
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+if = '''executable('python3') && has('python3')'''
+on_event = 'InsertEnter'
+hook_source = '''exec 'source ' . g:rc_dir . '/deoplete_nvim.vim' '''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+on_path = '.*'
+
+[[plugins]]
+repo = 'sjl/gundo.vim'
+hook_add = '''
+    nnoremap <F5> :GundoToggle<CR>
+    let g:gundo_prefer_python3 = 1
+'''
+on_map = '<F5>'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+hook_add = '''
+    let g:winresizer_start_key = '<C-q>'
+'''
+on_map = '<C-q>'
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html']
+hook_source = '''exec 'source ' . g:rc_dir . '/emmet-vim.vim' '''
