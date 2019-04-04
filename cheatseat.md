@@ -1,4 +1,4 @@
-## normal mode  
+# normal mode  
 
 ### space + n  
 リンクを開く  
@@ -38,13 +38,13 @@ gf :Gdiff<CR>
 gp :Git push origin  
 
 ：Gstatus上の変更のあったファイルにカーソルを合わせた状態で  
-Dで:Gdiff起動(差分表示)  
--でaddとresetの切り替え  
-pでパッチを表示  
-Enterでファイル表示  
+ * Dで:Gdiff起動(差分表示)  
+ * -でaddとresetの切り替え  
+ * pでパッチを表示  
+ * Enterでファイル表示  
   
 :Gstatusの画面上で  
-Cでcommit  
+ * Cでcommit  
 
 ### gitgutter
 gn Gitの変更箇所に移動  
@@ -64,7 +64,7 @@ gd 定義元を新しいタブで開く
 ### emmet
 https://qiita.com/muran001/items/9ce24525b3285678acc3  
 
-## insert mode
+# insert mode
 
 ### 行の先頭、最後
 Ctrl + a 行の先頭  
