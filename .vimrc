@@ -1,4 +1,5 @@
 set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/dein/repos/github.com/autozimu/LanguageClient-neovim
 
 if dein#load_state($HOME . '/.vim/dein/toml')
 
@@ -31,7 +32,6 @@ set belloff=all
 
 " display number of line
 set number
-set relativenumber
 
 " always display status bar
 set laststatus=2

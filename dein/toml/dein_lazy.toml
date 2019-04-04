@@ -29,11 +29,6 @@ on_ft = ['vim']
 depend = ['deoplete.nvim']
 
 [[plugins]]
-repo = 'zchee/deoplete-jedi'
-on_ft = ['python']
-depend = ['deoplete.nvim']
-
-[[plugins]]
 repo = 'Shougo/neco-syntax'
 on_i = 1
 depend = ['deoplete.nvim']
