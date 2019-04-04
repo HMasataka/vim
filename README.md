@@ -19,3 +19,7 @@ sh ./installer.sh ~/.vim/dein
 ```
 pip3 install neovim
 ```
+
+```
+cp ~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim/bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
+```
