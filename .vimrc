@@ -30,6 +30,7 @@ endif
 
 syntax on
 
+set splitbelow
 set signcolumn=yes
 
 " backup
