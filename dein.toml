@@ -66,3 +66,9 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree.vim' '''
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree-git.vim' '''
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+hook_add = '''
+    let g:cheatsheet#cheat_file = g:rc_dir . '/cheatsheet.md'
+'''

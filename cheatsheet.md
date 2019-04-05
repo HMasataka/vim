@@ -1,5 +1,8 @@
 # normal mode  
 
+### :Cheat
+このファイルを表示
+
 ### space + n  
 リンクを開く  
 
