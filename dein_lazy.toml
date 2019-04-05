@@ -2,7 +2,7 @@
 repo = 'Shougo/deoplete.nvim'
 if = '''executable('python3') && has('python3')'''
 on_event = 'InsertEnter'
-hook_source = '''exec 'source ' . g:rc_dir . '/deoplete_nvim.vim' '''
+hook_source = '''exec 'source ' . g:rc_dir . '/settings/deoplete_nvim.vim' '''
 
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
@@ -26,12 +26,12 @@ on_map = '<C-q>'
 [[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html']
-hook_source = '''exec 'source ' . g:rc_dir . '/emmet-vim.vim' '''
+hook_source = '''exec 'source ' . g:rc_dir . '/settings/emmet-vim.vim' '''
 
 [[plugins]]
 repo = 'kannokanno/previm'
 on_ft = ['markdown']
-hook_source = '''exec 'source ' . g:rc_dir . '/previm.vim' '''
+hook_source = '''exec 'source ' . g:rc_dir . '/settings/previm.vim' '''
 
 [[plugins]]
 repo = 'tyru/open-browser.vim'
