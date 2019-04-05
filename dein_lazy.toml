@@ -36,3 +36,7 @@ hook_source = '''exec 'source ' . g:rc_dir . '/settings/previm.vim' '''
 [[plugins]]
 repo = 'tyru/open-browser.vim'
 on_ft = ['markdown']
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
+on_path = '.*'
