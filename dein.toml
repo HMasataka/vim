@@ -80,5 +80,5 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
 [[plugins]]
 repo = 'osyo-manga/vim-over'
 hook_add = '''
-    nnoremap <silent> <Space>/ :OverCommandLine<CR>%s/
+    nnoremap <silent> <Space>/ :OverCommandLine<CR>%s//g<Left><Left>
 '''
