@@ -62,3 +62,7 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/ale.vim' '''
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree.vim' '''
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree-git.vim' '''
