@@ -22,7 +22,9 @@ pip3 install neovim
 
 # Language Server の有効化
 ```
+(Python)
 pip3 install python-language-server
+(Go言語)
 go get -u github.com/sourcegraph/go-langserver
 ```
 ```
