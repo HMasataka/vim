@@ -120,7 +120,12 @@ inoremap <Up> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Down> <Nop>
-noremap <Up> <nop>
+noremap <Up> <Nop>
+
+noremap ZZ <Nop>
+noremap ZQ <Nop>
+noremap Q <Nop>
+noremap <MiddleMouse> <Nop>
 
 " splitting screen
 noremap ss :split<CR>
