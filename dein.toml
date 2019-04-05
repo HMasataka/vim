@@ -72,3 +72,7 @@ repo = 'reireias/vim-cheatsheet'
 hook_add = '''
     let g:cheatsheet#cheat_file = g:rc_dir . '/cheatsheet.md'
 '''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
