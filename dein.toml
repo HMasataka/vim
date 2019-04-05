@@ -54,3 +54,7 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/ale.vim' '''

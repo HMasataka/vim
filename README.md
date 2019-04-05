@@ -20,6 +20,11 @@ sh ./installer.sh ~/.vim/dein
 pip3 install neovim
 ```
 
+# aleの有効化
+```
+pip3 install flake8
+```
+
 # Language Server の有効化
 ```
 (Python)
