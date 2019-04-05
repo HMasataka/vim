@@ -67,6 +67,9 @@ gd 定義元を新しいタブで開く
 ### emmet
 https://qiita.com/muran001/items/9ce24525b3285678acc3  
 
+### nerdtree
+Ctrl k  nerdtreeを開く
+Ctrl f  今開いているファイルをnerdtreeで表示
 
 ### surround
 http://vimblog.hatenablog.com/entry/vim_plugin_surround_vim
