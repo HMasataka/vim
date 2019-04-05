@@ -48,3 +48,9 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-fugitive.vim' '''
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
+
+[[plugins]]
+repo = 'tpope/vim-repeat'
+
+[[plugins]]
+repo = 'tpope/vim-surround'

@@ -67,6 +67,15 @@ gd 定義元を新しいタブで開く
 ### emmet
 https://qiita.com/muran001/items/9ce24525b3285678acc3  
 
+
+### surround
+http://vimblog.hatenablog.com/entry/vim_plugin_surround_vim
+
+cs(") change
+ds(") delete
+S(") 選択範囲を囲う
+ys(text object)(") テキストオブジェクト範囲を囲う
+
 # insert mode
 
 ### 行の先頭、最後
