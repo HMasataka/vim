@@ -141,6 +141,10 @@ noremap sJ <C-w>J
 noremap sK <C-w>K
 noremap sL <C-w>L
 
+" copy to clipboard
+noremap <Space>y "*y
+noremap <Space>p "*p
+
 " tab
 noremap st :tabnew<CR>
 noremap sn gt
