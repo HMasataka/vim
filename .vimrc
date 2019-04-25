@@ -56,9 +56,7 @@ set softtabstop=4
 set shiftwidth=4
 augroup html-tabstop
     autocmd!
-    set tabstop=2
-    set softtabstop=2
-    set shiftwidth=2
+    autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 set expandtab
