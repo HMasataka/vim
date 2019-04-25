@@ -75,24 +75,24 @@ set virtualedit=onemore
 " scroll margin
 set scrolloff=4
 
-noremap ; :
+nnoremap ; :
 
 " Ctrl+j associate to ESC
 noremap! <C-j> <Esc>
 noremap <C-j> :noh<CR>
 
 " increment number
-noremap <C-c> <C-a>
+nnoremap <C-c> <C-a>
 
 " make line break possible in the middle of the line
-noremap <CR> A<CR><ESC>
+nnoremap <CR> A<CR><ESC>
 
 " movement on display instead of actual line
-noremap j gj
-noremap k gk
+nnoremap j gj
+nnoremap k gk
 
 " open link file
-noremap <space>n <C-w>gf
+nnoremap <space>n <C-w>gf
 
 " change cursor shape when insert mode
 let &t_ti.="\e[1 q"
@@ -105,18 +105,13 @@ inoremap <C-l> <Right>
 
 " move the cursor to end of line by Ctrl+e
 inoremap <C-e> <Esc><S-a>
-noremap <C-e> $
+nnoremap <C-e> $
 
 " move the cursor to begin of line by Ctrl+a
 inoremap <C-a> <Esc><S-i>
-noremap <C-a> ^
+nnoremap <C-a> ^
 
 " don't use arrow key
-inoremap <Left> <Nop>
-inoremap <Right> <Nop>
-inoremap <Down> <Nop>
-inoremap <Up> <Nop>
-
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 noremap <Down> <Nop>
@@ -128,23 +123,23 @@ noremap Q <Nop>
 noremap <MiddleMouse> <Nop>
 
 " splitting screen
-noremap ss :split<CR>
-noremap sv :vsplit<CR>
-noremap sh <C-w>h
-noremap sj <C-w>j
-noremap sk <C-w>k
-noremap sl <C-w>l
+nnoremap ss :split<CR>
+nnoremap sv :vsplit<CR>
+nnoremap sh <C-w>h
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
 
 " moving screen
-noremap sH <C-w>H
-noremap sJ <C-w>J
-noremap sK <C-w>K
-noremap sL <C-w>L
+nnoremap sH <C-w>H
+nnoremap sJ <C-w>J
+nnoremap sK <C-w>K
+nnoremap sL <C-w>L
 
 " tab
-noremap st :tabnew<CR>
-noremap sn gt
-noremap su gT
+nnoremap st :tabnew<CR>
+nnoremap sn gt
+nnoremap su gT
 " s<N> jump to N tab
 for n in range(1, 9)
     execute 'nnoremap <silent> s'.n ':<C-u>tabnext' .n.'<CR>'
@@ -170,6 +165,6 @@ autocmd BufReadPost *
 \ endif
 
 " tag jump
-noremap go %
+nnoremap go %
 
 colorscheme mstn3
