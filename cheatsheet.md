@@ -41,17 +41,21 @@ R  Rから始まるテキストオブジェクトで置換可能に（ヤンク�
 
 ### fugitive
 gs :Gstatus\<CR\>  
+gc :Gcommit -v\<CR\>  
 gf :Gdiff\<CR\>  
 gp :Git push origin  
 
-：Gstatus上の変更のあったファイルにカーソルを合わせた状態で  
+### Gstatus上の変更のあったファイルにカーソルを合わせた状態で  
  * Dで:Gdiff起動(差分表示)  
  * -でaddとresetの切り替え  
  * pでパッチを表示  
  * Enterでファイル表示  
   
-:Gstatusの画面上で  
+### Gstatusの画面上で  
  * Cでcommit  
+
+### Gdiff上の変更のあったファイルにカーソルを合わせた状態で  
+ * dp でgit add -p
 
 ### gitgutter
 gn Gitの変更箇所に移動  
