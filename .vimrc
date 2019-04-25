@@ -110,11 +110,11 @@ inoremap <C-l> <Right>
 
 " move the cursor to end of line by Ctrl+e
 inoremap <C-e> <Esc><S-a>
-nnoremap <C-e> $
+noremap <C-e> $
 
 " move the cursor to begin of line by Ctrl+a
 inoremap <C-a> <Esc><S-i>
-nnoremap <C-a> ^
+noremap <C-a> ^
 
 " don't use arrow key
 noremap <Left> <Nop>
