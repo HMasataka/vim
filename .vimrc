@@ -117,6 +117,11 @@ noremap <Right> <Nop>
 noremap <Down> <Nop>
 noremap <Up> <Nop>
 
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
+inoremap <Down> <Nop>
+inoremap <Up> <Nop>
+
 noremap ZZ <Nop>
 noremap ZQ <Nop>
 noremap Q <Nop>
