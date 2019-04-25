@@ -159,6 +159,12 @@ for n in range(1, 9)
     execute 'nnoremap <silent> s'.n ':<C-u>tabnext' .n.'<CR>'
 endfor
 
+" sw<N> jump to N window
+for n in range(1, 9)
+    let i = 1000 + n - 1
+    execute 'nnoremap <silent> sw'.n ':<C-u>call win_gotoid('. i .')<CR>'
+endfor
+
 " reload file
 set autoread
 augroup vimrc-checktime
