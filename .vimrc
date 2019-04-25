@@ -176,4 +176,7 @@ autocmd BufReadPost *
 " tag jump
 nnoremap go %
 
+" load terminal functions
+exec 'source ' . g:rc_dir . '/settings/my-terminal.vim'
+
 colorscheme mstn3

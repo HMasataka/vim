@@ -27,6 +27,10 @@ s\<N\> 指定したタブ
 ### カッコ
 go 対応するカッコ  
 
+### terminal  
+\<space\>t terminalを開く  
+\<space\>q 閉じる  
+  
 ### easymotion
 f 順方向一文字検索  
 F 逆方向一文字検索  
