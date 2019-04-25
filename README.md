@@ -16,6 +16,7 @@ pip3 install neovim
 
 # aleの有効化
 ```
+(Python)
 pip3 install flake8
 ```
 
@@ -23,6 +24,7 @@ pip3 install flake8
 ```
 (Python)
 pip3 install python-language-server
+
 (Go言語)
 go get -u github.com/sourcegraph/go-langserver
 ```
