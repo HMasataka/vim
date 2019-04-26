@@ -170,7 +170,7 @@ endfor
 
 " sw<N> jump to N window
 for n in range(1, 9)
-    execute 'nnoremap <silent> sw'.n ':<C-u>call win_gotoid('. ( 999 + n ) .')<CR>'
+    execute 'nnoremap <silent> sw'.n ':<C-u>call win_gotoid(win_getid('. n .'))<CR>'
 endfor
 
 " reload file
