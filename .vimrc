@@ -198,4 +198,22 @@ nnoremap go %
 " load terminal functions
 exec 'source ' . g:rc_dir . '/settings/my-terminal.vim'
 
+" If a file is already open, go to that window
+let g:open_files = {}
+function! s:goto_already_open() abort
+    let now_file = expand('%:p')
+    if has_key(g:open_files, now_file)
+        if win_getid() != g:open_files[now_file]
+            :q
+            call win_gotoid(g:open_files[now_file])
+        endif
+    elseif now_file != ''
+        let g:open_files[now_file] = win_getid()
+    endif
+endfunction
+augroup MoveAlreadyFile
+    autocmd!
+    autocmd BufEnter * call s:goto_already_open()
+augroup END
+
 colorscheme mstn3
