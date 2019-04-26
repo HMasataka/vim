@@ -46,9 +46,14 @@ set undofile
 set undodir=~/.vim/tmp
 
 set belloff=all
+
+" always show status line
 set laststatus=2
+
+" set scroll margin
 set scrolloff=4
 
+" always show line number
 set number
 
 set tabstop=4
@@ -74,10 +79,11 @@ set ignorecase
 
 set cursorline
 
+" default g optin on replace
 set gdefault
 set virtualedit=onemore
 
-" scroll margin
+" set scroll margin
 set scrolloff=4
 
 nnoremap ; :
