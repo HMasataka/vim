@@ -161,8 +161,7 @@ endfor
 
 " sw<N> jump to N window
 for n in range(1, 9)
-    let i = 1000 + n - 1
-    execute 'nnoremap <silent> sw'.n ':<C-u>call win_gotoid('. i .')<CR>'
+    execute 'nnoremap <silent> sw'.n ':<C-u>call win_gotoid('. ( 999 + n ) .')<CR>'
 endfor
 
 " reload file
