@@ -30,6 +30,9 @@ endif
 
 syntax on
 
+" automatically moves to the directory containing the file
+set autochdir
+
 set splitbelow
 set signcolumn=yes
 
