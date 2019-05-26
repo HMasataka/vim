@@ -30,6 +30,10 @@ endif
 
 syntax on
 
+set encoding=utf8
+set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
+set fileformats=unix,dos,mac
+
 " automatically moves to the directory containing the file
 set autochdir
 
@@ -104,7 +108,7 @@ noremap <C-j> :noh<CR>
 nnoremap <C-c> <C-a>
 
 " make line break possible in the middle of the line
-nnoremap <CR> A<CR><ESC>
+" nnoremap <CR> A<CR><ESC>
 
 " movement on display instead of actual line
 nnoremap j gj
@@ -204,21 +208,21 @@ nnoremap go %
 exec 'source ' . g:rc_dir . '/settings/my-terminal.vim'
 
 " If a file is already open, go to that window
-let g:open_files = {}
-function! s:goto_already_open() abort
-    let now_file = expand('%:p')
-    if has_key(g:open_files, now_file)
-        if win_getid() != g:open_files[now_file]
-            :q
-            call win_gotoid(g:open_files[now_file])
-        endif
-    elseif now_file != ''
-        let g:open_files[now_file] = win_getid()
-    endif
-endfunction
-augroup MoveAlreadyFile
-    autocmd!
-    autocmd BufEnter * call s:goto_already_open()
-augroup END
+" let g:open_files = {}
+" function! s:goto_already_open() abort
+"     let now_file = expand('%:p')
+"     if has_key(g:open_files, now_file)
+"         if win_getid() != g:open_files[now_file]
+"             :q
+"             call win_gotoid(g:open_files[now_file])
+"         endif
+"     elseif now_file != ''
+"         let g:open_files[now_file] = win_getid()
+"     endif
+" endfunction
+" augroup MoveAlreadyFile
+"     autocmd!
+"     autocmd BufEnter * call s:goto_already_open()
+" augroup END
 
 colorscheme mstn3
