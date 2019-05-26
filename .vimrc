@@ -64,10 +64,15 @@ set softtabstop=4
 set shiftwidth=4
 augroup html-tabstop
     autocmd!
-    autocmd FileType html setlocal tabstop=2 softtabstop=2 shiftwidth=2
+    autocmd FileType html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 augroup END
 
 set expandtab
+augroup go-tab
+    autocmd!
+    autocmd FileType go setlocal noexpandtab
+augroup END
+
 set autoindent
 set smartindent
 
