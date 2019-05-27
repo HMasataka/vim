@@ -26,7 +26,7 @@ pip3 install flake8
 pip3 install python-language-server
 
 (Go言語)
-go get -u github.com/sourcegraph/go-langserver
+go get -u golang.org/x/tools/cmd/gopls
 ```
 ```
 cp ~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim/bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
