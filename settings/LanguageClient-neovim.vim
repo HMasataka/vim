@@ -1,5 +1,3 @@
-let g:LanguageClient_diagnosticsEnable = 0
-
 " 補完時に表示されるプレビューウィンドウを消す
 set completeopt-=preview
 

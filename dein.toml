@@ -56,10 +56,6 @@ repo = 'tpope/vim-repeat'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'w0rp/ale'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/ale.vim' '''
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree.vim' '''
 
