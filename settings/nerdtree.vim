@@ -1,4 +1,4 @@
-nnoremap <silent><C-k> :NERDTreeTabsToggle<CR>
+nnoremap <silent><C-k> :NERDTree<CR>
 nnoremap <silent><C-f> :NERDTreeFind<CR>
 
 let NERDTreeShowHidden = 1
