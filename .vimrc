@@ -34,7 +34,7 @@ set encoding=utf8
 set fileencodings=utf-8
 
 " automatically moves to the directory containing the file
-set autochdir
+" set autochdir
 
 set splitbelow
 set signcolumn=yes
