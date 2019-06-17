@@ -174,12 +174,6 @@ augroup vimrc-checktime
     autocmd CursorMoved * checktime
 augroup END
 
-" tailing blanks removed
-augroup AutoDeleteSpace
-    autocmd!
-    autocmd BufWritePre * if &ft != 'markdown' | :%s/\s\+$//ge | endif
-augroup END
-
 " Restore the last cursor position when opening a file
 autocmd BufReadPost *
 \ if line("'\"") > 0 && line ("'\"") <= line("$") |
