@@ -14,12 +14,6 @@ sudo apt install vim
 pip3 install neovim
 ```
 
-# aleの有効化
-```
-(Python)
-pip3 install flake8
-```
-
 # Language Server の有効化
 ```
 (Python)
