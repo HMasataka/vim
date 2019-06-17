@@ -62,20 +62,6 @@ set scrolloff=4
 " always show line number
 set number
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-augroup html-tabstop
-    autocmd!
-    autocmd FileType html,javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
-augroup END
-
-set expandtab
-augroup go-tab
-    autocmd!
-    autocmd FileType go setlocal noexpandtab
-augroup END
-
 set autoindent
 set smartindent
 

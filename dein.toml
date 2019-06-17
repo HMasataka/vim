@@ -96,3 +96,6 @@ hook_add = '''
     xmap <silent> ab <Plug>(textobj-multiblock-a)
     xmap <silent> ib <Plug>(textobj-multiblock-i)
 '''
+
+[[plugins]]
+repo = 'editorconfig/editorconfig-vim'
