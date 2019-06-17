@@ -78,3 +78,9 @@ repo = 'osyo-manga/vim-over'
 hook_add = '''
     nnoremap <silent> <Space>/ :OverCommandLine<CR>%s//g<Left><Left>
 '''
+
+[[plugins]]
+repo = 'posva/vim-vue'
+hook_add = '''
+    autocmd FileType vue syntax sync fromstart
+'''
