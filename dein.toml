@@ -84,3 +84,15 @@ repo = 'posva/vim-vue'
 hook_add = '''
     autocmd FileType vue syntax sync fromstart
 '''
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+hook_add = '''
+    omap <silent> ab <Plug>(textobj-multiblock-a)
+    omap <silent> ib <Plug>(textobj-multiblock-i)
+    xmap <silent> ab <Plug>(textobj-multiblock-a)
+    xmap <silent> ib <Plug>(textobj-multiblock-i)
+'''
