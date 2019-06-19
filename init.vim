@@ -10,7 +10,7 @@ let g:rc_dir = expand('~/.vim')
 if !isdirectory(s:dein_repo_dir)
   execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
 endif
-execute 'set runtimepath^=' . s:dein_repo_dir
+execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
