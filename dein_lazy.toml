@@ -49,3 +49,11 @@ hook_source = '''exec 'source ' . g:rc_dir . '/settings/neosnippet.vim' '''
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
 on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+on_ft = ['vue']
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+on_ft = ['vue']
