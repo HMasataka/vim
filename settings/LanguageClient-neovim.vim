@@ -7,7 +7,14 @@ if executable('pyls')
     let g:LanguageClient_serverCommands['python'] = [expand('pyls')]
 endif
 
-let g:LanguageClient_serverCommands['go'] = [$GOPATH.'/bin/gopls']
+if executable('gopls')
+    let g:LanguageClient_serverCommands['go'] = [$GOPATH.'/bin/gopls']
+endif
+
+if executable('efm-langserver')
+    let g:LanguageClient_serverCommands['markdown'] = [$GOPATH.'/bin/efm-langserver']
+endif
+
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 
 let g:LanguageClient_autoStart = 1
