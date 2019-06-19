@@ -25,7 +25,7 @@ on_map = '<C-q>'
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html']
+on_ft = ['html', 'vue']
 hook_source = '''exec 'source ' . g:rc_dir . '/settings/emmet-vim.vim' '''
 
 [[plugins]]
@@ -38,7 +38,7 @@ repo = 'tyru/open-browser.vim'
 on_ft = ['markdown']
 
 [[plugins]]
-repo = 'jiangmiao/auto-pairs'
+repo = 'sylba2050/auto-pairs'
 on_path = '.*'
 
 [[plugins]]
