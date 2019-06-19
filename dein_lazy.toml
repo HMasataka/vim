@@ -40,3 +40,12 @@ on_ft = ['markdown']
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
 on_path = '.*'
+
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_path = '.*'
+hook_source = '''exec 'source ' . g:rc_dir . '/settings/neosnippet.vim' '''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+on_path = '.*'
