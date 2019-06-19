@@ -27,6 +27,9 @@ pip3 install python-language-server
 
 (Go言語)
 go get -u golang.org/x/tools/cmd/gopls
+
+(markdown)
+sudo npm install -g markdownlint-cli
 ```
 
 なぜかlanguageclientのbuildが走らない環境があるので手動でbuild
