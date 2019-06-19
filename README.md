@@ -39,3 +39,15 @@ cd ~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim
 sh install.sh
 cp bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
 ```
+
+### nvim
+
+```bash
+curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+chmod u+x nvim.appimage
+./nvim.appimage
+```
+
+```bash
+cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
+```
