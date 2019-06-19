@@ -33,6 +33,8 @@ syntax on
 set encoding=utf8
 set fileencodings=utf-8
 
+set helplang=ja,en
+
 " automatically moves to the directory containing the file
 " set autochdir
 
