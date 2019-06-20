@@ -38,6 +38,7 @@ sudo npm install -g markdownlint-cli
 cd ~/.cache/dein/repos/github.com/autozimu/LanguageClient-neovim
 sh install.sh
 cp bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
+cp -i bin/languageclient ~/.cache/dein/.cache/init.vim/.dein/bin/languageclient
 ```
 
 ### nvim
