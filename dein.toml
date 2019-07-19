@@ -102,3 +102,7 @@ repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
+repo = 'tbodt/deoplete-tabnine'
+bulid = 'bash install.sh'
