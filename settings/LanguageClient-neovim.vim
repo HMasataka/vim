@@ -3,6 +3,10 @@ set completeopt-=preview
 
 let g:LanguageClient_serverCommands = {}
 
+if executable('rustup')
+    let g:LanguageClient_serverCommands['rust'] = [expand('rustup'), 'run', 'nightly', 'rls']
+endif
+
 if executable('pyls')
     let g:LanguageClient_serverCommands['python'] = [expand('pyls')]
 endif
