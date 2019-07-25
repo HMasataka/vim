@@ -16,6 +16,7 @@ if executable('efm-langserver')
 endif
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+autocmd BufWritePre *.py :call LanguageClient#textDocument_formatting_sync()
 
 let g:LanguageClient_autoStart = 1
 

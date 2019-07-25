@@ -24,6 +24,7 @@ pip3 install neovim
 ```bash
 (Python)
 pip3 install python-language-server
+pip3 install 'python-language-server[yapf]'
 
 (Go言語)
 go get -u golang.org/x/tools/cmd/gopls
