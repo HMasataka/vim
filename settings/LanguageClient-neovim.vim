@@ -3,6 +3,10 @@ set completeopt-=preview
 
 let g:LanguageClient_serverCommands = {}
 
+if executable('rustup')
+    let g:LanguageClient_serverCommands['rust'] = [expand('rustup'), 'run', 'nightly', 'rls']
+endif
+
 if executable('pyls')
     let g:LanguageClient_serverCommands['python'] = [expand('pyls')]
 endif
@@ -17,6 +21,8 @@ endif
 
 autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 autocmd BufWritePre *.py :call LanguageClient#textDocument_formatting_sync()
+set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 let g:LanguageClient_autoStart = 1
 

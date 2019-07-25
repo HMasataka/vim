@@ -42,6 +42,12 @@ cp bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
 cp -i bin/languageclient ~/.cache/dein/.cache/init.vim/.dein/bin/languageclient
 ```
 
+## Golang Lint
+
+```bash
+env GO111MODULE=off go get -u golang.org/x/lint/golint
+```
+
 ### nvim
 
 ```bash
