@@ -61,3 +61,23 @@ on_ft = ['vue']
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_path = '.toml'
+
+[[plugins]]
+repo = 'osyo-manga/vim-over'
+on_map = '<Space>/'
+hook_add = '''
+    nnoremap <silent> <Space>/ :OverCommandLine<CR>%s//g<Left><Left>
+'''
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'
+on_map = ':Cheat'
+hook_add = '''
+    let g:cheatsheet#cheat_file = g:rc_dir . '/cheatsheet.md'
+'''
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+on_map = '/'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
+
