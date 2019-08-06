@@ -48,7 +48,7 @@ cp -i bin/languageclient ~/.cache/dein/.cache/init.vim/.dein/bin/languageclient
 env GO111MODULE=off go get -u golang.org/x/lint/golint
 ```
 
-### nvim
+## nvim
 
 ```bash
 curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
