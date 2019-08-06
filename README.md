@@ -46,6 +46,29 @@ cp bin/languageclient ~/.cache/dein/.cache/.vimrc/.dein/bin/languageclient
 cp -i bin/languageclient ~/.cache/dein/.cache/init.vim/.dein/bin/languageclient
 ```
 
+## Deep TabNine
+
+### set config
+
+mac
+
+```bash
+~/Library/Preferences/TabNine/tabnine_config.json
+```
+
+linux
+
+```bash
+~/.config/TabNine/tabnine_config.json
+```
+
+### build and copy bin
+
+```bash
+cd ~/.cache/dein/repos/github.com/tbodt/deoplete-tabnine
+cp -r binaries/  ~/.cache/dein/.cache/init.vim/.dein/
+```
+
 ## Golang Lint
 
 ```bash
