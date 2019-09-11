@@ -30,6 +30,7 @@ pip3 install 'python-language-server[yapf]'
 go get -u golang.org/x/tools/cmd/gopls
 
 (markdown)
+go get github.com/mattn/efm-langserver
 sudo npm install -g markdownlint-cli
 ```
 
