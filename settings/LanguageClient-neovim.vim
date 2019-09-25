@@ -19,10 +19,10 @@ if executable('efm-langserver')
     let g:LanguageClient_serverCommands['markdown'] = [$GOPATH.'/bin/efm-langserver']
 endif
 
-autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+" autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
 autocmd BufWritePre *.py :call LanguageClient#textDocument_formatting_sync()
-set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
+" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 let g:LanguageClient_autoStart = 1
 
