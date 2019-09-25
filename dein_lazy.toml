@@ -92,3 +92,7 @@ hook_source = '''
 [[plugins]]
 repo = 'fatih/vim-go'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-go.vim' '''
+
+[[plugins]]
+repo = 'mattn/efm-langserver'
+on_ft = 'markdown'
