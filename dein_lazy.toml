@@ -1,10 +1,4 @@
 [[plugins]]
-repo = 'Shougo/deoplete.nvim'
-if = '''executable('python3') && has('python3')'''
-on_event = 'InsertEnter'
-hook_source = '''exec 'source ' . g:rc_dir . '/settings/deoplete_nvim.vim' '''
-
-[[plugins]]
 repo = 'tomtom/tcomment_vim'
 on_path = '.*'
 
@@ -39,15 +33,6 @@ on_ft = ['markdown']
 
 [[plugins]]
 repo = 'sylba2050/auto-pairs'
-on_path = '.*'
-
-[[plugins]]
-repo = 'Shougo/neosnippet.vim'
-on_path = '.*'
-hook_source = '''exec 'source ' . g:rc_dir . '/settings/neosnippet.vim' '''
-
-[[plugins]]
-repo = 'Shougo/neosnippet-snippets'
 on_path = '.*'
 
 [[plugins]]

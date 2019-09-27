@@ -7,10 +7,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
-repo = 'autozimu/LanguageClient-neovim'
-rev = 'next'
-bulid = 'bash install.sh'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/LanguageClient-neovim.vim' '''
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'

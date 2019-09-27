@@ -17,7 +17,3 @@ au FileType go nmap <silent> gat :GoAddTags<CR>
 au FileType go nmap <silent> gk :GoKeyify<CR>
 " if errを追加
 au FileType go nmap <silent> gie :GoIfErr<CR>
-" rename
-au FileType go nmap <silent> gre :GoRename<CR>
-" 定義参照
-au FileType go nmap <silent> grf :GoReferrers<CR>
