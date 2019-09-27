@@ -81,3 +81,7 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-go.vim' '''
 [[plugins]]
 repo = 'mattn/efm-langserver'
 on_ft = 'markdown'
+
+[[plugins]]
+repo = 'andys8/vim-elm-syntax'
+on_path = '.elm'
