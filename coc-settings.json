@@ -1,0 +1,48 @@
+{
+    "suggest.noselect": false,
+    "suggest.echodocSupport": true,
+    "suggest.maxCompleteItemCount": 100,
+    "diagnostic.infoSign": "✓",
+    "diagnostic.hintSign": "◯",
+    "coc.preferences.jumpCommand": "tab drop",
+    "coc.preferences.formatOnType": true,
+    "python.pythonPath":"python3",
+    "python.linting.enabled": true,
+    "python.linting.flake8Enabled": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json",
+        "go",
+        "html"
+    ],
+    "languageserver": {
+        "golang": {
+            "command": "gopls",
+            "filetypes": [
+                "go"
+            ],
+            "rootPatterns": [
+                "go.mod"
+            ]
+        },
+        "efm": {
+            "command": "efm-langserver",
+            "args": [],
+            "filetypes": [
+                "markdown"
+            ]
+        },
+        "elmLS": {
+            "command": "elm-language-server",
+            "filetypes": [
+                "elm"
+            ],
+            "rootPatterns": [
+                "elm.json"
+            ],
+            "initializationOptions": {
+                "elmFormatPath": "elm-format",
+                "elmAnalyseTrigger": "change"
+            }
+        }
+    }
+}
