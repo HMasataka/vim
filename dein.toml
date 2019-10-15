@@ -7,6 +7,10 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
+repo = 'Shougo/defx.nvim'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/defx.vim' '''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 rev = 'release'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
