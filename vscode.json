@@ -1,0 +1,158 @@
+{
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.cursorStylePerMode.insert": "|",
+    "vim.leader": "<space>",
+    "search.smartCase": true,
+    "vim.visualstar": true,
+    "vim.useCtrlKeys": true,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editor.enablePreview": false,
+    "vim.easymotion": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "O"
+            ],
+            "commands": [
+                "i",
+                "<ESC>"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "commands": [
+                ":noh",
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "^",
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "f"
+            ],
+            "after": [
+                "leader",
+                "leader",
+                "s"
+            ]
+        },
+        {
+            "before": [
+                "<C-e>",
+            ],
+            "after": [
+                "$",
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "j"
+            ],
+            "after": [
+                "g",
+                "j"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "k"
+            ],
+            "after": [
+                "g",
+                "k",
+            ],
+            "when": "editorFocus"
+        },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ";"
+            ],
+            "after": [
+                ":"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<Esc>"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-a>"
+            ],
+            "after": [
+                "^",
+            ],
+            "when": "editorFocus"
+        },
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<C-j>",
+            ],
+            "after": [
+                "<Esc>"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-a>",
+            ],
+            "after": [
+                "<Esc>",
+                "I"
+            ],
+            "when": "editorFocus"
+        },
+        {
+            "before": [
+                "<C-e>",
+            ],
+            "after": [
+                "<Esc>",
+                "A"
+            ],
+            "when": "editorFocus"
+        },
+    ],
+    "go.useLanguageServer": true,
+    "editor.formatOnSave": true,
+    "workbench.sideBar.location": "left",
+    "go.formatTool": "goimports",
+}
