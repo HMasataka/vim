@@ -36,14 +36,6 @@ repo = 'sylba2050/auto-pairs'
 on_path = '.*'
 
 [[plugins]]
-repo = 'Shougo/context_filetype.vim'
-on_ft = ['vue']
-
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-on_ft = ['vue']
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_path = '.toml'
 
