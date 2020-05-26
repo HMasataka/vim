@@ -103,9 +103,6 @@ nnoremap <C-c> <C-a>
 nnoremap j gj
 nnoremap k gk
 
-" open link file
-nnoremap <space>n <C-w>gf
-
 " change cursor shape when insert mode
 let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
