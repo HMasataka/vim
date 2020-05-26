@@ -2,6 +2,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> <space>rf <Plug>(coc-references)
 nmap <silent> <space>rn <Plug>(coc-rename)
 nmap <silent> <space>l <Plug>(coc-format)
+nmap <silent> <space>n <Plug>(coc-diagnostic-next-error)
+nmap <silent> <space>N <Plug>(coc-diagnostic-prev-error)
 
 command! -nargs=0 Format :call CocAction('format')
 
