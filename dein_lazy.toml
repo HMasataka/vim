@@ -59,8 +59,8 @@ on_map = '/'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
 
 [[plugins]]
-repo = 'fatih/vim-go'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-go.vim' '''
+repo = 'mattn/vim-goimports'
+on_ft = 'go'
 
 [[plugins]]
 repo = 'mattn/efm-langserver'
