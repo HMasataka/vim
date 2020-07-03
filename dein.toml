@@ -93,3 +93,6 @@ bulid = 'bash install.sh'
 
 [[plugins]]
 repo = 'tpope/vim-obsession'
+
+[[plugins]]
+repo = 'kamykn/spelunker.vim'

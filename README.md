@@ -87,3 +87,9 @@ chmod u+x nvim.appimage
 ```bash
 cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
 ```
+
+## spell checker
+
+```bash
+ln -s ~/.vim/en.utf-8.add ~/.cache/dein/repos/github.com/Shougo/dein.vim/spell/en.utf-8.add
+```
