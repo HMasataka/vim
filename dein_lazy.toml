@@ -32,7 +32,7 @@ repo = 'tyru/open-browser.vim'
 on_ft = ['markdown']
 
 [[plugins]]
-repo = 'sylba2050/auto-pairs'
+repo = 'jiangmiao/auto-pairs'
 on_path = '.*'
 
 [[plugins]]

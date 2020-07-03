@@ -6,22 +6,23 @@
     "diagnostic.hintSign": "◯",
     "coc.preferences.jumpCommand": "tab drop",
     "coc.preferences.formatOnType": true,
-    "python.pythonPath":"python3",
+    "coc.source.word.priority": 1,
+    "python.pythonPath": "python3",
     "python.linting.enabled": true,
     "python.linting.flake8Enabled": true,
+    "python.formatting.autopep8Args":["--max-line-length=120"],
+    "python.linting.flake8Args":["--max-line-length=120"],
     "coc.preferences.formatOnSaveFiletypes": [
         "json",
         "go",
         "html"
     ],
     "languageserver": {
-        "golang": {
-            "command": "gopls",
+        "sql": {
+            "command": "sqls",
+            "args": ["-config", "$HOME/.config/sqls/config.yml"],
             "filetypes": [
-                "go"
-            ],
-            "rootPatterns": [
-                "go.mod"
+                "sql"
             ]
         },
         "efm": {
