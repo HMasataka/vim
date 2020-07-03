@@ -91,5 +91,6 @@ cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
 ## spell checker
 
 ```bash
-ln -s ~/.vim/en.utf-8.add ~/.cache/dein/repos/github.com/Shougo/dein.vim/spell/en.utf-8.add
+ln -s ~/.vim/spellchecker/en.utf-8.add ~/.cache/dein/repos/github.com/Shougo/dein.vim/spell/en.utf-8.add
+ln -s ~/.vim/spellchecker/en.utf-8.add.spl ~/.cache/dein/repos/github.com/Shougo/dein.vim/spell/en.utf-8.add.spl
 ```
