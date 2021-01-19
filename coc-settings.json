@@ -6,21 +6,21 @@
     "diagnostic.hintSign": "◯",
     "coc.preferences.jumpCommand": "tab drop",
     "coc.preferences.formatOnType": true,
-    "coc.source.word.priority": 1,
-    "python.pythonPath": "python3",
-    "python.linting.enabled": true,
-    "python.linting.flake8Enabled": true,
-    "python.formatting.autopep8Args":["--max-line-length=120"],
-    "python.linting.flake8Args":["--max-line-length=120"],
     "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
         "json",
         "go",
+        "svelte",
+        "vue",
         "html"
     ],
     "languageserver": {
         "sql": {
             "command": "sqls",
-            "args": ["-config", "$HOME/.config/sqls/config.yml"],
+            "args": [
+                "-config",
+                "$HOME/.config/sqls/config.yml"
+            ],
             "filetypes": [
                 "sql"
             ]

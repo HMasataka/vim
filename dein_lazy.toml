@@ -76,3 +76,11 @@ on_ft = 'json'
 hook_add = '''
     let g:vim_json_syntax_conceal = 0
 '''
+
+[[plugins]]
+repo = 'evanleck/vim-svelte'
+on_path = '.svelte'
+hook_add = '''
+    let g:svelte_indent_script = 0
+    let g:svelte_indent_style = 0
+'''
