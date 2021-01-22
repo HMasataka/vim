@@ -37,5 +37,5 @@ call denite#custom#option('default', 'winheight', &lines / 2)
 call denite#custom#option('default', 'preview_height', &lines / 2)
 
 call denite#custom#option('default', 'wincol', &columns / 8)
-call denite#custom#option('default', 'winwidth', &columns / 2)
-call denite#custom#option('default', 'preview_width', (&columns / 8) * 3)
+call denite#custom#option('default', 'winwidth', (&columns / 8) * 3)
+call denite#custom#option('default', 'preview_width', &columns / 2)
