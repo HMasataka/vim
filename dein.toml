@@ -100,3 +100,7 @@ repo = 'kamykn/spelunker.vim'
 [[plugins]]
 repo = 'segeljakt/vim-silicon'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/silicon.vim' '''
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/denite.vim' '''
