@@ -17,7 +17,7 @@ function! s:denite_my_settings() abort
   nnoremap <silent><buffer><expr> <C-c>
   \ denite#do_map('quit')
 
-  nnoremap <silent><buffer><expr> i
+  nnoremap <silent><buffer><expr> /
   \ denite#do_map('open_filter_buffer')
 
   nnoremap <silent><buffer><expr> p
