@@ -84,3 +84,7 @@ hook_add = '''
     let g:svelte_indent_script = 0
     let g:svelte_indent_style = 0
 '''
+
+[[plugins]]
+repo = 'dart-lang/dart-vim-plugin'
+on_path = '.dart'
