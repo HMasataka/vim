@@ -11,6 +11,10 @@ repo = 'Shougo/defx.nvim'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/defx.vim' '''
 
 [[plugins]]
+repo = 'HMasataka/defx-icons'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/defx-icons.vim' '''
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'

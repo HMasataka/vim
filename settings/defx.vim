@@ -1,8 +1,9 @@
-nnoremap <C-g> :Defx<CR>
+nnoremap <C-g> :Defx -columns=icons:indent:filename:type<CR>
 
 autocmd FileType defx call s:defx_my_settings()
     function! s:defx_my_settings() abort
       nnoremap <silent><buffer><expr> <CR> defx#do_action('open', ':tabe')
+      nnoremap <silent><buffer><expr> o defx#do_action('open_or_close_tree')
       nnoremap <silent><buffer><expr> c defx#do_action('copy')
       nnoremap <silent><buffer><expr> m defx#do_action('move')
       nnoremap <silent><buffer><expr> p defx#do_action('paste')
