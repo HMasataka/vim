@@ -2,7 +2,7 @@ nnoremap <C-g> :Defx<CR>
 
 autocmd FileType defx call s:defx_my_settings()
     function! s:defx_my_settings() abort
-      nnoremap <silent><buffer><expr> <CR> defx#do_action('open')
+      nnoremap <silent><buffer><expr> <CR> defx#do_action('open', ':tabe')
       nnoremap <silent><buffer><expr> c defx#do_action('copy')
       nnoremap <silent><buffer><expr> m defx#do_action('move')
       nnoremap <silent><buffer><expr> p defx#do_action('paste')
