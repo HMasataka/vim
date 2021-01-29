@@ -1,8 +1,7 @@
-" Gstatus
-noremap gs :Gstatus<CR>
-" Gdiff
-noremap gf :Gdiff<CR>
-noremap gc :Gcommit -v<CR>
-" Gpush
-" TODO 現在の状態を取得してそこをデフォルトに
-noremap gp :Git push origin
+nnoremap [fugitive]  <Nop>
+nmap <space>g [fugitive]
+nnoremap <silent> [fugitive]s :Gstatus<CR>
+nnoremap <silent> [fugitive]a :Gwrite<CR>
+nnoremap <silent> [fugitive]c :Gcommit-v<CR>
+nnoremap <silent> [fugitive]b :Gblame<CR>
+nnoremap <silent> [fugitive]d :Gdiff<CR>
