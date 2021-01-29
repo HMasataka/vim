@@ -47,13 +47,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'reireias/vim-cheatsheet'
-on_map = ':Cheat'
-hook_add = '''
-    let g:cheatsheet#cheat_file = g:rc_dir . '/cheatsheet.md'
-'''
-
-[[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
