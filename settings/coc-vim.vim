@@ -36,3 +36,5 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
+
+let g:coc_global_extensions = ['coc-flutter', 'coc-go', 'coc-json', 'coc-snippets', 'coc-svelte', 'coc-tabnine', 'coc-tsserver', 'coc-vetur', 'coc-word']
