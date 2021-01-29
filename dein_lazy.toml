@@ -51,10 +51,6 @@ repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
 [[plugins]]
-repo = 'mattn/efm-langserver'
-on_ft = 'markdown'
-
-[[plugins]]
 repo = 'andys8/vim-elm-syntax'
 on_path = '.elm'
 
