@@ -64,10 +64,6 @@ repo = 'tpope/vim-repeat'
 repo = 'tpope/vim-surround'
 
 [[plugins]]
-repo = 'osyo-manga/vim-anzu'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
-
-[[plugins]]
 repo = 'posva/vim-vue'
 hook_add = '''
     autocmd FileType vue syntax sync fromstart
