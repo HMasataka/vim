@@ -54,11 +54,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'osyo-manga/vim-anzu'
-on_map = '/'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-anzu.vim' '''
-
-[[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
