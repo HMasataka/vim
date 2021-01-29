@@ -100,3 +100,11 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/silicon.vim' '''
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/denite.vim' '''
+
+[[plugins]]
+repo='sheerun/vim-polyglot'
+hook_add = '''
+    let g:vim_json_syntax_conceal = 0
+    let g:svelte_indent_script = 0
+    let g:svelte_indent_style = 0
+'''
