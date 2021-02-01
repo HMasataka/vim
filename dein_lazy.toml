@@ -50,6 +50,3 @@ hook_add = '''
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
-[[plugins]]
-repo = 'andys8/vim-elm-syntax'
-on_path = '.elm'
