@@ -14,6 +14,10 @@
         "vue",
         "html"
     ],
+    "markdownlint.config": {
+        "default": true,
+        "line_length": false
+    },
     "languageserver": {
         "sql": {
             "command": "sqls",
@@ -24,26 +28,6 @@
             "filetypes": [
                 "sql"
             ]
-        },
-        "efm": {
-            "command": "efm-langserver",
-            "args": [],
-            "filetypes": [
-                "markdown"
-            ]
-        },
-        "elmLS": {
-            "command": "elm-language-server",
-            "filetypes": [
-                "elm"
-            ],
-            "rootPatterns": [
-                "elm.json"
-            ],
-            "initializationOptions": {
-                "elmFormatPath": "elm-format",
-                "elmAnalyseTrigger": "change"
-            }
         }
     }
 }
