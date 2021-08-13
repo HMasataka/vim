@@ -13,7 +13,9 @@
         "svelte",
         "dart",
         "vue",
-        "html"
+        "cs",
+        "html",
+        "java"
     ],
     "markdownlint.config": {
         "default": true,
