@@ -15,7 +15,9 @@
         "vue",
         "cs",
         "html",
-        "java"
+        "java",
+        "javascriptreact",
+        "typescriptreact"
     ],
     "markdownlint.config": {
         "default": true,
