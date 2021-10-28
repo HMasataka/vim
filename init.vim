@@ -100,9 +100,6 @@ noremap <C-j> :noh<CR>
 " increment number
 nnoremap <C-c> <C-a>
 
-" make line break possible in the middle of the line
-" nnoremap <CR> A<CR><ESC>
-
 " movement on display instead of actual line
 nnoremap j gj
 nnoremap k gk
