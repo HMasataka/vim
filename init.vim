@@ -50,7 +50,7 @@ set signcolumn=yes
 set backup
 set backupdir=~/.vim/tmp
 
-" dont create swap file
+" don't create swap file
 set noswapfile
 set directory=~/.vim/tmp
 
@@ -83,8 +83,9 @@ set ignorecase
 
 set cursorline
 
-" default g optin on replace
+" default g option on replace
 set gdefault
+
 set virtualedit=onemore
 
 " set scroll margin
