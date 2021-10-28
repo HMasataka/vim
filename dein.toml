@@ -91,9 +91,6 @@ repo = 'vim-jp/vimdoc-ja'
 repo = 'tpope/vim-obsession'
 
 [[plugins]]
-repo = 'kamykn/spelunker.vim'
-
-[[plugins]]
 repo = 'segeljakt/vim-silicon'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/silicon.vim' '''
 

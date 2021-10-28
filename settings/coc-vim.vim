@@ -51,5 +51,10 @@ let g:coc_global_extensions = [
     \ 'coc-vimlsp',
     \ 'coc-xml',
     \ 'coc-yaml',
+    \ 'coc-spell-checker',
     \ 'coc-omnisharp'
 \ ]
+
+" for coc-spell-check
+vmap <leader>a <Plug>(coc-codeaction-selected)
+nmap <leader>a <Plug>(coc-codeaction-selected)
