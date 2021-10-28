@@ -39,20 +39,28 @@ let g:coc_snippet_next = '<tab>'
 
 let g:coc_global_extensions = [
     \ 'coc-flutter',
+    \ 'coc-python',
+    \ 'coc-sql',
     \ 'coc-go',
-    \ 'coc-json',
-    \ 'coc-snippets',
+    \ 'coc-rls',
+    \ 'coc-omnisharp',
     \ 'coc-svelte',
     \ 'coc-tsserver',
     \ 'coc-vetur',
-    \ 'coc-word',
-    \ 'coc-markdownlint',
-    \ 'coc-tabnine',
     \ 'coc-vimlsp',
+    \ 'coc-tabnine',
+    \ 'coc-docker',
+    \ 'coc-markdownlint',
+    \ 'coc-json',
     \ 'coc-xml',
     \ 'coc-yaml',
+    \ 'coc-css',
+    \ 'coc-cssmodules',
     \ 'coc-spell-checker',
-    \ 'coc-omnisharp'
+    \ 'coc-simple-react-snippets',
+    \ 'coc-snippets',
+    \ 'coc-gitignore',
+    \ 'coc-word'
 \ ]
 
 " for coc-spell-check
