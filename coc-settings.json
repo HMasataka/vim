@@ -23,6 +23,8 @@
         "default": true,
         "line_length": false
     },
+    "tabnine.priority": 30,
+    "coc.source.word.priority": 20,
     "languageserver": {
         "sql": {
             "command": "sqls",
