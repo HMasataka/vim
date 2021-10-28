@@ -23,4 +23,3 @@ on_path = '.*'
 [[plugins]]
 repo = 'mattn/vim-goimports'
 on_ft = 'go'
-

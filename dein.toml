@@ -42,24 +42,10 @@ repo = 'Yggdroot/indentLine'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/indentLine.vim' '''
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-fugitive.vim' '''
-
-[[plugins]]
-repo = 'airblade/vim-gitgutter'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
-
-[[plugins]]
 repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'posva/vim-vue'
-hook_add = '''
-    autocmd FileType vue syntax sync fromstart
-'''
 
 [[plugins]]
 repo = 'kana/vim-textobj-user'
@@ -94,11 +80,3 @@ hook_add = '''
     let g:svelte_indent_script = 0
     let g:svelte_indent_style = 0
 '''
-
-[[plugins]]
-repo = 'simeji/winresizer'
-hook_add = '''
-    let g:winresizer_start_key = '<C-q>'
-'''
-on_map = '<C-q>'
-
