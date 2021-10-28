@@ -19,6 +19,9 @@
         "javascriptreact",
         "typescriptreact"
     ],
+    "go.goplsOptions": {
+        "completeUnimported": true
+    },
     "markdownlint.config": {
         "default": true,
         "line_length": false
