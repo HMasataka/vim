@@ -6,6 +6,11 @@
 pip3 install neovim
 ```
 
+```bash
+ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
+```
+
 ## Install neovim
 
 ### Ubuntu
