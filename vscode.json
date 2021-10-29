@@ -29,7 +29,7 @@
                 "<C-j>"
             ],
             "commands": [
-                ":noh",
+                ":noh"
             ],
             "when": "editorFocus"
         },
@@ -38,7 +38,7 @@
                 "<C-a>"
             ],
             "after": [
-                "^",
+                "^"
             ],
             "when": "editorFocus"
         },
@@ -54,10 +54,10 @@
         },
         {
             "before": [
-                "<C-e>",
+                "<C-e>"
             ],
             "after": [
-                "$",
+                "$"
             ],
             "when": "editorFocus"
         },
@@ -86,10 +86,10 @@
             ],
             "after": [
                 "g",
-                "k",
+                "k"
             ],
             "when": "editorFocus"
-        },
+        }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
@@ -115,15 +115,15 @@
                 "<C-a>"
             ],
             "after": [
-                "^",
+                "^"
             ],
             "when": "editorFocus"
-        },
+        }
     ],
     "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
-                "<C-j>",
+                "<C-j>"
             ],
             "after": [
                 "<Esc>"
@@ -132,7 +132,7 @@
         },
         {
             "before": [
-                "<C-a>",
+                "<C-a>"
             ],
             "after": [
                 "<Esc>",
@@ -142,17 +142,17 @@
         },
         {
             "before": [
-                "<C-e>",
+                "<C-e>"
             ],
             "after": [
                 "<Esc>",
                 "A"
             ],
             "when": "editorFocus"
-        },
+        }
     ],
     "go.useLanguageServer": true,
     "editor.formatOnSave": true,
     "workbench.sideBar.location": "left",
-    "go.formatTool": "goimports",
+    "go.formatTool": "goimports"
 }
