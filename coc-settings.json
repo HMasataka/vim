@@ -7,17 +7,7 @@
     "coc.preferences.jumpCommand": "tab drop",
     "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnSaveFiletypes": [
-        "javascript",
-        "json",
-        "go",
-        "svelte",
-        "dart",
-        "vue",
-        "cs",
-        "html",
-        "java",
-        "javascriptreact",
-        "typescriptreact"
+        "*"
     ],
     "go.goplsOptions": {
         "completeUnimported": true
@@ -41,6 +31,6 @@
         }
     },
     "cSpell.userWords": [
-      "dein"
+        "dein"
     ]
 }
