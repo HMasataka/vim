@@ -28,18 +28,6 @@
     },
     "tabnine.priority": 30,
     "coc.source.word.priority": 20,
-    "languageserver": {
-        "sql": {
-            "command": "sqls",
-            "args": [
-                "-config",
-                "$HOME/.config/sqls/config.yml"
-            ],
-            "filetypes": [
-                "sql"
-            ]
-        }
-    },
     "cSpell.userWords": [
         "dein"
     ]
