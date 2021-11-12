@@ -7,7 +7,17 @@
     "coc.preferences.jumpCommand": "tab drop",
     "coc.preferences.formatOnType": true,
     "coc.preferences.formatOnSaveFiletypes": [
-        "*"
+        "go",
+        "dart",
+        "cs",
+        "java",
+        "html",
+        "javascript",
+        "vue",
+        "svelte",
+        "javascriptreact",
+        "typescriptreact",
+        "json"
     ],
     "go.goplsOptions": {
         "completeUnimported": true
