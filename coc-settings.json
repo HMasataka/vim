@@ -30,6 +30,8 @@
     "tabnine.priority": 30,
     "coc.source.word.priority": 20,
     "cSpell.userWords": [
-        "dein"
+      "dein",
+      "grpc",
+      "tmpl"
     ]
 }
