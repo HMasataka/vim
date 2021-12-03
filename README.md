@@ -11,6 +11,14 @@ ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 ```
 
+### Python
+
+#### formatter
+
+```bash
+pip install black
+```
+
 ## Install neovim
 
 ### Ubuntu
