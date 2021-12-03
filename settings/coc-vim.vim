@@ -41,7 +41,8 @@ let g:coc_snippet_next = '<tab>'
 
 let g:coc_global_extensions = [
     \ 'coc-flutter',
-    \ 'coc-python',
+    \ 'coc-jedi',
+    \ 'coc-diagnostic',
     \ 'coc-sql',
     \ 'coc-go',
     \ 'coc-rls',
