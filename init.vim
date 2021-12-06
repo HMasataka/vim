@@ -79,7 +79,10 @@ set backspace=indent,eol,start
 
 set incsearch
 set hlsearch
+
+" only when capital letters are entered, set to be case-sensitive.
 set ignorecase
+set smartcase
 
 set cursorline
 
