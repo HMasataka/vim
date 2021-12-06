@@ -64,7 +64,7 @@ set belloff=all
 set laststatus=2
 
 " set scroll margin
-set scrolloff=4
+set scrolloff=999
 
 " always show line number
 set number
@@ -87,9 +87,6 @@ set cursorline
 set gdefault
 
 set virtualedit=onemore
-
-" set scroll margin
-set scrolloff=4
 
 nnoremap ; :
 
