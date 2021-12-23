@@ -19,7 +19,8 @@
         "svelte",
         "javascriptreact",
         "typescriptreact",
-        "json"
+        "json",
+        "jsonc"
     ],
     "go.goplsOptions": {
         "completeUnimported": true
