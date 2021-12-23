@@ -19,6 +19,18 @@ ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 pip install black
 ```
 
+### Terraform
+
+```bash
+brew install hashicorp/tap/terraform-ls
+```
+
+### Color Scheme
+
+```bash
+cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
+```
+
 ## Install neovim
 
 ### Ubuntu
@@ -33,10 +45,4 @@ chmod u+x nvim.appimage
 
 ```bash
 brew install neovim
-```
-
-## Setup Color Scheme
-
-```bash
-cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
 ```

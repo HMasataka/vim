@@ -30,6 +30,20 @@
     },
     "tabnine.priority": 30,
     "coc.source.word.priority": 20,
+    "languageserver": {
+        "terraform": {
+            "command": "terraform-ls",
+            "args": [
+                "serve"
+            ],
+            "filetypes": [
+                "terraform",
+                "tf"
+            ],
+            "initializationOptions": {},
+            "settings": {}
+        }
+    },
     "diagnostic-languageserver.filetypes": {
         "python": "flake8"
     },
