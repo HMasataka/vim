@@ -41,7 +41,6 @@ set fileencodings=utf-8
 
 set helplang=ja,en
 
-set splitbelow
 set signcolumn=yes
 
 " backup
