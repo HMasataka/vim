@@ -41,9 +41,6 @@ set fileencodings=utf-8
 
 set helplang=ja,en
 
-" automatically moves to the directory containing the file
-" set autochdir
-
 set splitbelow
 set signcolumn=yes
 
@@ -149,6 +146,7 @@ noremap <Space>p "*p
 nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap su gT
+
 " s<N> jump to N tab
 for n in range(1, 9)
     execute 'nnoremap <silent> s'.n ':<C-u>tabnext' .n.'<CR>'
