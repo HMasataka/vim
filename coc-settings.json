@@ -29,6 +29,7 @@
         "default": true,
         "line_length": false
     },
+    "dart.lineLength": 150,
     "tabnine.priority": 30,
     "coc.source.word.priority": 20,
     "languageserver": {
@@ -99,6 +100,7 @@
     },
     "cSpell.userWords": [
         "dein",
+        "gcloud",
         "grpc",
         "tmpl"
     ]
