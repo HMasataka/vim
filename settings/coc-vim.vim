@@ -72,6 +72,9 @@ vmap <leader>a <Plug>(coc-codeaction-selected)
 nmap <leader>a <Plug>(coc-codeaction-selected)
 
 " for coc-fzf-preview
+set shell=/bin/zsh
+let $SHELL = "/bin/zsh"
+
 nmap <Leader>f [fzf-p]
 xmap <Leader>f [fzf-p]
 nnoremap <silent> [fzf-p]f     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>

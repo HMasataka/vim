@@ -93,6 +93,9 @@ repo = 'airblade/vim-gitgutter'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+
+[[plugins]]
 repo = 'honza/vim-snippets'
 
 [[plugins]]
