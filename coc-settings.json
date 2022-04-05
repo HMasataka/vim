@@ -47,9 +47,6 @@
         },
         "nim": {
             "command": "nimlsp",
-            "args": [
-                "/Users/hisasue/.choosenim/toolchains/nim-1.6.4"
-            ],
             "rootPatterns": [
                 ".git/"
             ],
