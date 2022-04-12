@@ -22,15 +22,11 @@
         "json",
         "jsonc"
     ],
-    "go.goplsOptions": {
-        "completeUnimported": true
-    },
     "markdownlint.config": {
         "default": true,
         "line_length": false
     },
     "dart.lineLength": 150,
-    "tabnine.priority": 30,
     "coc.source.word.priority": 20,
     "languageserver": {
         "terraform": {

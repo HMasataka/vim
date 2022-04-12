@@ -37,7 +37,7 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_prev = '<TAB>'
 
 let g:coc_global_extensions = [
     \ 'coc-flutter',
@@ -51,7 +51,6 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-vetur',
     \ 'coc-vimlsp',
-    \ 'coc-tabnine',
     \ 'coc-docker',
     \ 'coc-markdownlint',
     \ 'coc-json',
