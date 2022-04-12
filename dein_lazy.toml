@@ -25,6 +25,11 @@ repo = 'mattn/vim-goimports'
 on_ft = 'go'
 
 [[plugins]]
+repo = 'sebdah/vim-delve'
+on_ft = 'go'
+hook_source = '''exec 'source ' . g:rc_dir . '/settings/vim-delve.vim' '''
+
+[[plugins]]
 repo = 'jsborjesson/vim-uppercase-sql'
 on_ft = 'sql'
 
