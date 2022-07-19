@@ -101,3 +101,10 @@ repo = 'honza/vim-snippets'
 [[plugins]]
 repo = 'junegunn/fzf'
 depends = 'fzf'
+
+[[plugins]]
+repo='vim-denops/denops.vim'
+
+[[plugins]]
+repo='vim-skk/denops-skkeleton.vim'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/denops-skkeleton.vim' '''
