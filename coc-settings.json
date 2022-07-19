@@ -9,6 +9,7 @@
     "coc.preferences.formatOnSaveFiletypes": [
         "python",
         "go",
+        "rust",
         "dart",
         "cs",
         "java",

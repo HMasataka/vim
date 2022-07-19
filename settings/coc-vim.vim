@@ -45,7 +45,7 @@ let g:coc_global_extensions = [
     \ 'coc-diagnostic',
     \ 'coc-sql',
     \ 'coc-go',
-    \ 'coc-rls',
+    \ 'coc-rust-analyzer',
     \ 'coc-omnisharp',
     \ 'coc-svelte',
     \ 'coc-tsserver',
