@@ -46,7 +46,6 @@ let g:coc_global_extensions = [
     \ 'coc-sql',
     \ 'coc-go',
     \ 'coc-rust-analyzer',
-    \ 'coc-omnisharp',
     \ 'coc-svelte',
     \ 'coc-tsserver',
     \ 'coc-vetur',
@@ -57,13 +56,12 @@ let g:coc_global_extensions = [
     \ 'coc-xml',
     \ 'coc-yaml',
     \ 'coc-css',
+    \ 'coc-snippets',
     \ 'coc-cssmodules',
     \ 'coc-spell-checker',
-    \ 'coc-simple-react-snippets',
-    \ 'coc-snippets',
     \ 'coc-gitignore',
     \ 'coc-word',
-    \ 'coc-fzf-preview'
+    \ 'coc-fzf-preview',
 \ ]
 
 " for coc-spell-check
