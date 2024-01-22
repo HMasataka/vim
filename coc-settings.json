@@ -1,129 +1,110 @@
 {
-    "suggest.noselect": false,
-    "suggest.echodocSupport": true,
-    "suggest.maxCompleteItemCount": 100,
-    "diagnostic.infoSign": "✓",
-    "diagnostic.hintSign": "◯",
-    "coc.preferences.jumpCommand": "tab drop",
-    "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "python",
-        "go",
-        "rust",
-        "dart",
-        "cs",
-        "java",
-        "html",
-        "javascript",
-        "css",
-        "vue",
-        "svelte",
-        "javascriptreact",
-        "typescriptreact",
-        "json",
-        "jsonc"
-    ],
-    "markdownlint.config": {
-        "default": true,
-        "line_length": false
+  "suggest.noselect": false,
+  "suggest.echodocSupport": true,
+  "suggest.maxCompleteItemCount": 100,
+  "diagnostic.infoSign": "✓",
+  "diagnostic.hintSign": "◯",
+  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "go",
+    "rust",
+    "dart",
+    "cs",
+    "java",
+    "html",
+    "javascript",
+    "css",
+    "vue",
+    "svelte",
+    "javascriptreact",
+    "typescriptreact",
+    "json",
+    "jsonc"
+  ],
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
+  },
+  "dart.lineLength": 150,
+  "coc.source.word.priority": 20,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     },
-    "dart.lineLength": 150,
-    "coc.source.word.priority": 20,
-    "languageserver": {
-        "terraform": {
-            "command": "terraform-ls",
-            "args": [
-                "serve"
-            ],
-            "filetypes": [
-                "terraform",
-                "tf"
-            ],
-            "initializationOptions": {},
-            "settings": {}
-        },
-        "nim": {
-            "command": "nimlsp",
-            "rootPatterns": [
-                ".git/"
-            ],
-            "filetypes": [
-                "nim",
-                "nimble"
-            ]
-        },
-        "golangci-lint-languageserver": {
-            "command": "golangci-lint-langserver",
-            "filetypes": [
-                "go"
-            ],
-            "initializationOptions": {
-                "command": [
-                    "golangci-lint",
-                    "run",
-                    "--out-format",
-                    "json",
-                    "--issues-exit-code=1"
-                ]
-            }
-        }
+    "nim": {
+      "command": "nimlsp",
+      "rootPatterns": [".git/"],
+      "filetypes": ["nim", "nimble"]
     },
-    "diagnostic-languageserver.filetypes": {
-        "python": "flake8"
-    },
-    "diagnostic-languageserver.linters": {
-        "flake8": {
-            "sourceName": "flake8",
-            "command": "flake8",
-            "debounce": 200,
-            "rootPatterns": [
-                ".git"
-            ],
-            "args": [
-                "--ignore=D100,D103,P101",
-                "--format=%(row)d,%(col)d,%(code).1s,%(code)s: %(text)s",
-                "--max-line-length=120",
-                "-"
-            ],
-            "offsetLine": 0,
-            "offsetColumn": 0,
-            "formatLines": 1,
-            "formatPattern": [
-                "(\\d+),(\\d+),([A-Z]),(.*)(\\r|\\n)*$",
-                {
-                    "line": 1,
-                    "column": 2,
-                    "security": 3,
-                    "message": 4
-                }
-            ],
-            "securities": {
-                "W": "info",
-                "E": "warning",
-                "F": "info",
-                "C": "info",
-                "N": "hint"
-            }
-        }
-    },
-    "diagnostic-languageserver.formatFiletypes": {
-        "python": [
-            "black"
+    "golangci-lint-languageserver": {
+      "command": "golangci-lint-langserver",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+          "--issues-exit-code=1"
         ]
+      }
     },
-    "diagnostic-languageserver.formatters": {
-        "black": {
-            "command": "black",
-            "args": [
-                "-q",
-                "-"
-            ]
+    "go-lsp": {
+      "command": "example",
+      "rootPatterns": [".git/"],
+      "filetypes": ["go"]
+    }
+  },
+  "diagnostic-languageserver.filetypes": {
+    "python": "flake8"
+  },
+  "diagnostic-languageserver.linters": {
+    "flake8": {
+      "sourceName": "flake8",
+      "command": "flake8",
+      "debounce": 200,
+      "rootPatterns": [".git"],
+      "args": [
+        "--ignore=D100,D103,P101",
+        "--format=%(row)d,%(col)d,%(code).1s,%(code)s: %(text)s",
+        "--max-line-length=120",
+        "-"
+      ],
+      "offsetLine": 0,
+      "offsetColumn": 0,
+      "formatLines": 1,
+      "formatPattern": [
+        "(\\d+),(\\d+),([A-Z]),(.*)(\\r|\\n)*$",
+        {
+          "line": 1,
+          "column": 2,
+          "security": 3,
+          "message": 4
         }
-    },
-    "cSpell.userWords": [
-        "dein",
-        "gcloud",
-        "grpc",
-        "tmpl"
-    ]
+      ],
+      "securities": {
+        "W": "info",
+        "E": "warning",
+        "F": "info",
+        "C": "info",
+        "N": "hint"
+      }
+    }
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "black": {
+      "command": "black",
+      "args": ["-q", "-"]
+    }
+  },
+  "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"]
 }
