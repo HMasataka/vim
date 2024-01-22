@@ -106,5 +106,12 @@
       "args": ["-q", "-"]
     }
   },
-  "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"]
+  "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"],
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "snippets.ultisnips.pythonPrompt": false
 }
