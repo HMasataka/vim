@@ -54,11 +54,6 @@
           "--issues-exit-code=1"
         ]
       }
-    },
-    "go-lsp": {
-      "command": "example",
-      "rootPatterns": [".git/"],
-      "filetypes": ["go"]
     }
   },
   "diagnostic-languageserver.filetypes": {
