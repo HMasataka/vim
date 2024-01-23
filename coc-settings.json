@@ -113,5 +113,6 @@
   "list.insertMappings": {
     "<C-c>": "do:exit"
   },
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd"
 }

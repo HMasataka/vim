@@ -62,6 +62,7 @@ let g:coc_global_extensions = [
     \ 'coc-gitignore',
     \ 'coc-word',
     \ 'coc-fzf-preview',
+    \ 'coc-fzf-clangd',
 \ ]
 
 " for coc-spell-check
