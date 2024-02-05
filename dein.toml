@@ -108,3 +108,6 @@ repo='vim-denops/denops.vim'
 [[plugins]]
 repo='vim-skk/denops-skkeleton.vim'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/denops-skkeleton.vim' '''
+
+[[plugins]]
+repo='jjo/vim-cue'
