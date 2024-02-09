@@ -6,23 +6,7 @@
   "diagnostic.hintSign": "◯",
   "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.formatOnType": true,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "python",
-    "go",
-    "rust",
-    "dart",
-    "cs",
-    "java",
-    "html",
-    "javascript",
-    "css",
-    "vue",
-    "svelte",
-    "javascriptreact",
-    "typescriptreact",
-    "json",
-    "jsonc"
-  ],
+  "coc.preferences.formatOnSave": true,
   "markdownlint.config": {
     "default": true,
     "line_length": false
