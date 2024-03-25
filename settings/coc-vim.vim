@@ -41,7 +41,7 @@ let g:coc_snippet_prev = '<TAB>'
 
 let g:coc_global_extensions = [
     \ 'coc-flutter',
-    \ 'coc-jedi',
+    \ 'coc-pyright',
     \ 'coc-diagnostic',
     \ 'coc-sql',
     \ 'coc-go',
