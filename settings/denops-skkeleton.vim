@@ -3,6 +3,6 @@ cmap <C-k> <Plug>(skkeleton-toggle)
 
 call skkeleton#config({
 \   'eggLikeNewline':v:true,
-\   'globalJisyo': '~/.vim/skk/SKK-JISYO.L',
-\   'userJisyo': '~/.vim/skk/skk-jisyo.utf8'
+\   'globalDictionaries': [['~/.vim/skk/SKK-JISYO.L', '']],
+\   'userDictionary': '~/.vim/skk/skk-jisyo.utf8'
 \})
