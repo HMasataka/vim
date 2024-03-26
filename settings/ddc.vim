@@ -17,40 +17,34 @@ nmap <silent> <space>N :LspPreviousError<CR>
 nmap <silent> <space>j :LspNextDiagnostic<CR>
 nmap <silent> <space>k :LspPreviousDiagnostic<CR>
 
-call ddc#custom#patch_global('sources', [
- \ 'lsp',
- \ 'around',
- \ 'file',
- \ ])
-
-call ddc#custom#patch_global('sourceOptions', #{
- \ _: #{
- \   matchers: ['matcher_head'],
- \   sorters: ['sorter_rank'],
- \   converters: ['converter_remove_overlap'],
- \ },
- \ around: #{
- \  mark: 'Around',
- \ },
- \ lsp: #{
- \   mark: 'LSP',
- \   matchers: ['matcher_head'],
- \   forceCompletionPattern: '\.\w*|:\w*|->\w*',
- \ },
- \ file: #{
- \   mark: 'file',
- \   isVolatile: v:true,
- \   forceCompletionPattern: '\S/\S*'
- \ }})
-
-call ddc#custom#patch_global('sourceParams', #{
-\   lsp: #{
-\     snippetEngine: denops#callback#register({
-\           body -> vsnip#anonymous(body)
-\     }),
-\     enableResolveItem: v:true,
-\     enableAdditionalTextEdit: v:true,
-\   }
-\ })
+call ddc#custom#patch_global({
+\	'ui': 'native',
+\	'sources': [
+\		'vim-lsp',
+\		'around',
+\		'file',
+\	],
+\	'sourceOptions': {
+\		'_': {
+\			'matchers'  : ['matcher_head'],
+\			'sorters'   : ['sorter_rank'],
+\			'converters': ['converter_remove_overlap'],
+\			'ignoreCase': v:true,
+\		},
+\		'around': {
+\			'mark': '[Arround]',
+\		},
+\		'file': {
+\			'mark': '[File]',
+\		},
+\		'vim-lsp': {
+\			'mark': '[LSP]',
+\			'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\		},
+\	},
+\	'sourceParams': {
+\		'around': { 'maxSize': 500 },
+\	 },
+\})
 
 call ddc#enable()

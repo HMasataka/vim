@@ -7,6 +7,12 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
+repo = 'prabirshrestha/vim-lsp'
+
+[[plugins]]
+repo = 'mattn/vim-lsp-settings'
+
+[[plugins]]
 repo='vim-denops/denops.vim'
 
 [[plugins]]
@@ -37,13 +43,7 @@ repo = 'LumaKernel/ddc-file'
 repo = 'Shougo/ddc-source-around'
 
 [[plugins]]
-repo = 'Shougo/ddc-source-lsp'
-
-[[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
+repo = 'shun/ddc-source-vim-lsp'
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
