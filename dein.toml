@@ -80,11 +80,15 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'honza/vim-snippets'
+repo = 'junegunn/fzf'
+build = './install --bin'
+merge = 0
+rev = 'release'
 
 [[plugins]]
-repo = 'junegunn/fzf'
+repo = 'junegunn/fzf.vim'
 depends = 'fzf'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/fzf.vim' '''
 
 [[plugins]]
 repo='vim-denops/denops.vim'
