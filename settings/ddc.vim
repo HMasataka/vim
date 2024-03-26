@@ -18,8 +18,8 @@ nmap <silent> <space>j :LspNextDiagnostic<CR>
 nmap <silent> <space>k :LspPreviousDiagnostic<CR>
 
 call ddc#custom#patch_global('sources', [
+ \ 'lsp',
  \ 'around',
- \ 'vim-lsp',
  \ 'file',
  \ ])
 
@@ -30,14 +30,25 @@ call ddc#custom#patch_global('sourceOptions', {
  \   'converters': ['converter_remove_overlap'],
  \ },
  \ 'around': {'mark': 'Around'},
- \ 'vim-lsp': {
+ \ 'lsp': {
  \   'mark': 'LSP',
  \   'matchers': ['matcher_head'],
- \   'forceCompletionPattern': '\.|:|->|"\w+/*'
+ \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
  \ },
  \ 'file': {
  \   'mark': 'file',
  \   'isVolatile': v:true,
  \   'forceCompletionPattern': '\S/\S*'
  \ }})
+
+call ddc#custom#patch_global('sourceParams', {
+\   'lsp': {
+\     'snippetEngine': denops#callback#register({
+\           body -> vsnip#anonymous(body)
+\     }),
+\     'enableResolveItem': v:true,
+\     'enableAdditionalTextEdit': v:true,
+\   }
+\ })
+
 call ddc#enable()
