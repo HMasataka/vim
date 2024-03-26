@@ -39,6 +39,10 @@ repo = 'Shougo/ddc-converter_remove_overlap'
 repo = 'LumaKernel/ddc-file'
 
 [[plugins]]
+# バッファから補完するsource
+repo = 'matsui54/ddc-source-buffer'
+
+[[plugins]]
 # カーソル周辺の単語を補完するsource
 repo = 'Shougo/ddc-source-around'
 

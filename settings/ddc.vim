@@ -22,6 +22,7 @@ call ddc#custom#patch_global({
 \	'sources': [
 \		'vim-lsp',
 \		'around',
+\		'buffer',
 \		'file',
 \	],
 \	'sourceOptions': {
@@ -37,6 +38,9 @@ call ddc#custom#patch_global({
 \		'file': {
 \			'mark': '[File]',
 \		},
+\       'buffer': {
+\           'mark': '[Buffer]',
+\       },
 \		'vim-lsp': {
 \			'mark': '[LSP]',
 \			'forceCompletionPattern': '\.\w*|:\w*|->\w*',
@@ -44,6 +48,12 @@ call ddc#custom#patch_global({
 \	},
 \	'sourceParams': {
 \		'around': { 'maxSize': 500 },
+\       'buffer': {
+\           'requireSameFiletype': v:false,
+\           'limitBytes': 5000000,
+\           'fromAltBuf': v:true,
+\           'forceCollect': v:true,
+\       },
 \	 },
 \})
 
