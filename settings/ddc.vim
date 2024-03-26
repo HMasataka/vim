@@ -18,43 +18,43 @@ nmap <silent> <space>j :LspNextDiagnostic<CR>
 nmap <silent> <space>k :LspPreviousDiagnostic<CR>
 
 call ddc#custom#patch_global({
-\	'ui': 'native',
-\	'sources': [
-\		'vim-lsp',
-\		'around',
-\		'buffer',
-\		'file',
-\	],
-\	'sourceOptions': {
-\		'_': {
-\			'matchers'  : ['matcher_head'],
-\			'sorters'   : ['sorter_rank'],
-\			'converters': ['converter_remove_overlap'],
-\			'ignoreCase': v:true,
-\		},
-\		'around': {
-\			'mark': '[Arround]',
-\		},
-\		'file': {
-\			'mark': '[File]',
-\		},
+\   'ui': 'native',
+\   'sources': [
+\       'vim-lsp',
+\       'around',
+\       'buffer',
+\       'file',
+\   ],
+\   'sourceOptions': {
+\       '_': {
+\           'matchers'  : ['matcher_head'],
+\           'sorters'   : ['sorter_rank'],
+\           'converters': ['converter_remove_overlap'],
+\           'ignoreCase': v:true,
+\       },
+\       'around': {
+\           'mark': '[Arround]',
+\       },
+\       'file': {
+\           'mark': '[File]',
+\       },
 \       'buffer': {
 \           'mark': '[Buffer]',
 \       },
-\		'vim-lsp': {
-\			'mark': '[LSP]',
-\			'forceCompletionPattern': '\.\w*|:\w*|->\w*',
-\		},
-\	},
-\	'sourceParams': {
-\		'around': { 'maxSize': 500 },
+\       'vim-lsp': {
+\           'mark': '[LSP]',
+\           'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+\       },
+\   },
+\   'sourceParams': {
+\       'around': { 'maxSize': 500 },
 \       'buffer': {
 \           'requireSameFiletype': v:false,
 \           'limitBytes': 5000000,
 \           'fromAltBuf': v:true,
 \           'forceCollect': v:true,
 \       },
-\	 },
+\   },
 \})
 
 call ddc#enable()
