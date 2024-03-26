@@ -7,6 +7,9 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
+repo='vim-denops/denops.vim'
+
+[[plugins]]
 repo = 'neoclide/coc.nvim'
 merge = 0
 rev = 'release'
@@ -78,6 +81,7 @@ hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-fugitive.vim' '''
 
 [[plugins]]
 repo = 'junegunn/fzf'
@@ -89,9 +93,6 @@ rev = 'release'
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/fzf.vim' '''
-
-[[plugins]]
-repo='vim-denops/denops.vim'
 
 [[plugins]]
 repo='vim-skk/denops-skkeleton.vim'
