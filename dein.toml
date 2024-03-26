@@ -73,14 +73,6 @@ repo='voldikss/vim-floaterm'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-floaterm.vim' '''
 
 [[plugins]]
-repo='preservim/nerdtree'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree.vim' '''
-
-[[plugins]]
-repo='Xuyuanp/nerdtree-git-plugin'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/nerdtree-git.vim' '''
-
-[[plugins]]
 repo = 'airblade/vim-gitgutter'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-gitgutter.vim' '''
 
