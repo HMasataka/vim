@@ -13,9 +13,6 @@ rev = 'release'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
 
 [[plugins]]
-repo = 'terryma/vim-multiple-cursors'
-
-[[plugins]]
 repo = 'terryma/vim-expand-region'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-expand-region.vim' '''
 
@@ -28,6 +25,13 @@ depend = ['kana/vim-operator-user']
 hook_add = '''
     map R  <Plug>(operator-replace)
 '''
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-textobj-multiblock.vim' '''
 
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
@@ -46,18 +50,6 @@ repo = 'tpope/vim-repeat'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
-
-[[plugins]]
-repo = 'kana/vim-textobj-user'
-
-[[plugins]]
-repo = 'osyo-manga/vim-textobj-multiblock'
-hook_add = '''
-    omap <silent> ab <Plug>(textobj-multiblock-a)
-    omap <silent> ib <Plug>(textobj-multiblock-i)
-    xmap <silent> ab <Plug>(textobj-multiblock-a)
-    xmap <silent> ib <Plug>(textobj-multiblock-i)
-'''
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'
