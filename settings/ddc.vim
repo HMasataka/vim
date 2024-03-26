@@ -23,31 +23,33 @@ call ddc#custom#patch_global('sources', [
  \ 'file',
  \ ])
 
-call ddc#custom#patch_global('sourceOptions', {
- \ '_': {
- \   'matchers': ['matcher_head'],
- \   'sorters': ['sorter_rank'],
- \   'converters': ['converter_remove_overlap'],
+call ddc#custom#patch_global('sourceOptions', #{
+ \ _: #{
+ \   matchers: ['matcher_head'],
+ \   sorters: ['sorter_rank'],
+ \   converters: ['converter_remove_overlap'],
  \ },
- \ 'around': {'mark': 'Around'},
- \ 'lsp': {
- \   'mark': 'LSP',
- \   'matchers': ['matcher_head'],
- \   'forceCompletionPattern': '\.\w*|:\w*|->\w*',
+ \ around: #{
+ \  mark: 'Around',
  \ },
- \ 'file': {
- \   'mark': 'file',
- \   'isVolatile': v:true,
- \   'forceCompletionPattern': '\S/\S*'
+ \ lsp: #{
+ \   mark: 'LSP',
+ \   matchers: ['matcher_head'],
+ \   forceCompletionPattern: '\.\w*|:\w*|->\w*',
+ \ },
+ \ file: #{
+ \   mark: 'file',
+ \   isVolatile: v:true,
+ \   forceCompletionPattern: '\S/\S*'
  \ }})
 
-call ddc#custom#patch_global('sourceParams', {
-\   'lsp': {
-\     'snippetEngine': denops#callback#register({
+call ddc#custom#patch_global('sourceParams', #{
+\   lsp: #{
+\     snippetEngine: denops#callback#register({
 \           body -> vsnip#anonymous(body)
 \     }),
-\     'enableResolveItem': v:true,
-\     'enableAdditionalTextEdit': v:true,
+\     enableResolveItem: v:true,
+\     enableAdditionalTextEdit: v:true,
 \   }
 \ })
 
