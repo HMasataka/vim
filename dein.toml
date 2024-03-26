@@ -47,6 +47,10 @@ repo = 'matsui54/ddc-source-buffer'
 repo = 'Shougo/ddc-source-around'
 
 [[plugins]]
+# 英単語の補完
+repo = 'Shougo/ddc-source-mocword'
+
+[[plugins]]
 repo = 'shun/ddc-source-vim-lsp'
 
 [[plugins]]

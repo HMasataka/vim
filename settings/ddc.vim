@@ -22,6 +22,7 @@ call ddc#custom#patch_global({
 \   'sources': [
 \       'vim-lsp',
 \       'around',
+\       'mocword',
 \       'buffer',
 \       'file',
 \   ],
@@ -40,6 +41,11 @@ call ddc#custom#patch_global({
 \       },
 \       'buffer': {
 \           'mark': '[Buffer]',
+\       },
+\       'mocword': {
+\           'mark': '[Mocword]',
+\           'minAutoCompleteLength': 2,
+\           'isVolatile': v:true,
 \       },
 \       'vim-lsp': {
 \           'mark': '[LSP]',
