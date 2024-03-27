@@ -8,6 +8,7 @@ if = '!has("nvim")'
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-lsp.vim' '''
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
