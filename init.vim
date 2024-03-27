@@ -146,6 +146,10 @@ nnoremap st :tabnew<CR>
 nnoremap sn gt
 nnoremap su gT
 
+" buffer
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
+
 " s<N> jump to N tab
 for n in range(1, 9)
     execute 'nnoremap <silent> s'.n ':<C-u>tabnext' .n.'<CR>'

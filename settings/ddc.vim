@@ -7,9 +7,9 @@ function! s:show_documentation()
   endif
 endfunction
 
-nmap <silent> gd :tab LspDefinition<CR>
-nmap <silent> gi :tab LspImplementation<CR>
-nmap <silent> <space>rf :tab LspReferences<CR>
+nmap <silent> gd :LspDefinition<CR>
+nmap <silent> gi :LspImplementation<CR>
+nmap <silent> <space>rf :LspReferences<CR>
 nmap <silent> <space>rn :LspRename<CR>
 nmap <silent> <space>l :LspFormat<CR>
 nmap <silent> <space>n :LspNextError<CR>
