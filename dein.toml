@@ -11,6 +11,7 @@ repo = 'prabirshrestha/vim-lsp'
 
 [[plugins]]
 repo = 'mattn/vim-lsp-settings'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-lsp-settings.vim' '''
 
 [[plugins]]
 repo='vim-denops/denops.vim'
