@@ -7,53 +7,13 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
-repo = 'prabirshrestha/vim-lsp'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-lsp.vim' '''
-
-[[plugins]]
-repo = 'mattn/vim-lsp-settings'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-lsp-settings.vim' '''
-
-[[plugins]]
 repo='vim-denops/denops.vim'
 
 [[plugins]]
-repo = 'Shougo/ddc.vim'
-hook_add = '''exec 'source ' . g:rc_dir . '/settings/ddc.vim' '''
-
-[[plugins]]
-repo = 'Shougo/ddc-ui-native'
-
-[[plugins]]
-# 入力中の単語を補完の対象にするfilter
-repo = 'Shougo/ddc-matcher_head'
-
-[[plugins]]
-# 補完候補を適切にソートするfilter
-repo = 'Shougo/ddc-sorter_rank'
-
-[[plugins]]
-# 補完候補の重複を防ぐためのfilter
-repo = 'Shougo/ddc-converter_remove_overlap'
-
-[[plugins]]
-# ファイル名を補完するsource
-repo = 'LumaKernel/ddc-file'
-
-[[plugins]]
-# バッファから補完するsource
-repo = 'matsui54/ddc-source-buffer'
-
-[[plugins]]
-# カーソル周辺の単語を補完するsource
-repo = 'Shougo/ddc-source-around'
-
-[[plugins]]
-# 英単語の補完
-repo = 'Shougo/ddc-source-mocword'
-
-[[plugins]]
-repo = 'shun/ddc-source-vim-lsp'
+repo = 'neoclide/coc.nvim'
+merge = 0
+rev = 'release'
+hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
