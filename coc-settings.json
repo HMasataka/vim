@@ -1,52 +1,71 @@
 {
-    "suggest.noselect": false,
-    "suggest.maxCompleteItemCount": 100,
-    "diagnostic.infoSign": "✓",
-    "diagnostic.hintSign": "◯",
-    "coc.preferences.jumpCommand": "tab drop",
-    "coc.preferences.formatOnType": true,
-    "coc.preferences.formatOnSave": true,
-    "markdownlint.config": {
-        "default": true,
-        "line_length": false
+  "suggest.noselect": false,
+  "suggest.maxCompleteItemCount": 100,
+  "diagnostic.infoSign": "✓",
+  "diagnostic.hintSign": "◯",
+  "coc.preferences.jumpCommand": "tab drop",
+  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnSave": true,
+  "markdownlint.config": {
+    "default": true,
+    "line_length": false
+  },
+  "dart.lineLength": 150,
+  "coc.source.word.priority": 20,
+  "languageserver": {
+    "terraform": {
+      "command": "terraform-ls",
+      "args": ["serve"],
+      "filetypes": ["terraform", "tf"],
+      "initializationOptions": {},
+      "settings": {}
     },
-    "dart.lineLength": 150,
-    "coc.source.word.priority": 20,
-    "languageserver": {
-        "terraform": {
-            "command": "terraform-ls",
-            "args": ["serve"],
-            "filetypes": ["terraform", "tf"],
-            "initializationOptions": {},
-            "settings": {}
-        },
-        "nim": {
-            "command": "nimlsp",
-            "rootPatterns": [".git/"],
-            "filetypes": ["nim", "nimble"]
-        },
-        "golangci-lint-languageserver": {
-            "command": "golangci-lint-langserver",
-            "filetypes": ["go"],
-            "initializationOptions": {
-                "command": [
-                    "golangci-lint",
-                    "run",
-                    "--out-format",
-                    "json",
-                    "--issues-exit-code=1"
-                ]
-            }
-        }
+    "nim": {
+      "command": "nimlsp",
+      "rootPatterns": [".git/"],
+      "filetypes": ["nim", "nimble"]
     },
-    "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"],
-    "list.normalMappings": {
-        "<C-c>": "do:exit"
-    },
-    "list.insertMappings": {
-        "<C-c>": "do:exit"
-    },
-    "snippets.ultisnips.pythonPrompt": false,
-    "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd",
-    "svelte.enable-ts-plugin": false
+    "golangci-lint-languageserver": {
+      "command": "golangci-lint-langserver",
+      "filetypes": ["go"],
+      "initializationOptions": {
+        "command": [
+          "golangci-lint",
+          "run",
+          "--out-format",
+          "json",
+          "--issues-exit-code=1"
+        ]
+      }
+    }
+  },
+  "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"],
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  },
+  "snippets.ultisnips.pythonPrompt": false,
+  "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd",
+  "svelte.enable-ts-plugin": false,
+  "cSpell.enabledLanguageIds": [
+    "vim",
+    "c",
+    "cpp",
+    "csharp",
+    "css",
+    "html",
+    "python",
+    "rust",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "plaintext",
+    "yml",
+    "sh"
+  ]
 }
