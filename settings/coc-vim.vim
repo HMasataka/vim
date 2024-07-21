@@ -63,6 +63,7 @@ let g:coc_global_extensions = [
     \ 'coc-word',
     \ 'coc-fzf-preview',
     \ 'coc-clangd',
+    \ 'coc-prettier',
 \ ]
 
 " for coc-spell-check
