@@ -16,6 +16,9 @@ rev = 'release'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
 
 [[plugins]]
+repo =  'EdenEast/nightfox.nvim'
+
+[[plugins]]
 repo = 'terryma/vim-expand-region'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-expand-region.vim' '''
 

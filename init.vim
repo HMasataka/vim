@@ -176,4 +176,4 @@ autocmd BufReadPost *
 " tag jump
 nnoremap go %
 
-colorscheme mstn3
+colorscheme nightfox
