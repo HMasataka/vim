@@ -55,6 +55,7 @@ let g:coc_global_extensions = [
     \ 'coc-json',
     \ 'coc-xml',
     \ 'coc-yaml',
+    \ 'coc-toml',
     \ 'coc-css',
     \ 'coc-snippets',
     \ 'coc-cssmodules',
