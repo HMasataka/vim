@@ -43,7 +43,6 @@ let g:coc_global_extensions = [
     \ 'coc-flutter',
     \ 'coc-pyright',
     \ 'coc-diagnostic',
-    \ 'coc-sql',
     \ 'coc-go',
     \ 'coc-rust-analyzer',
     \ 'coc-svelte',
