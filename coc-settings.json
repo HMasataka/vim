@@ -39,7 +39,7 @@
       }
     }
   },
-  "cSpell.userWords": ["dein", "gcloud", "grpc", "tmpl"],
+  "cSpell.userWords": ["dein", "gcloud", "grpc", "kubectl", "tmpl", "webrtc"],
   "list.normalMappings": {
     "<C-c>": "do:exit"
   },
