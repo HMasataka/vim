@@ -67,5 +67,8 @@
     "plaintext",
     "yml",
     "sh"
-  ]
+  ],
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.hideNamedConstructor": true
 }
