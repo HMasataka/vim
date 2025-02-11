@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/hisasue/go/src/github.com/HMasataka/kubernetes/mount'
+let g:netrw_dirhist_3='/Users/hisasue/go/src/github.com/knocknote/loud_server'
+let g:netrw_dirhist_2='/Users/hisasue/go/src/github.com/knocknote/loud_server/middleware'
+let g:netrw_dirhist_1='/Users/hisasue/dotfiles'
