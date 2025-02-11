@@ -7,7 +7,7 @@ repo = 'roxma/vim-hug-neovim-rpc'
 if = '!has("nvim")'
 
 [[plugins]]
-repo='vim-denops/denops.vim'
+repo = 'vim-denops/denops.vim'
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
@@ -16,7 +16,7 @@ rev = 'release'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/coc-vim.vim' '''
 
 [[plugins]]
-repo =  'EdenEast/nightfox.nvim'
+repo = 'EdenEast/nightfox.nvim'
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
@@ -71,11 +71,11 @@ repo = 'segeljakt/vim-silicon'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/silicon.vim' '''
 
 [[plugins]]
-repo='sheerun/vim-polyglot'
+repo = 'sheerun/vim-polyglot'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-polyglot.vim' '''
 
 [[plugins]]
-repo='voldikss/vim-floaterm'
+repo = 'voldikss/vim-floaterm'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/vim-floaterm.vim' '''
 
 [[plugins]]
@@ -98,12 +98,16 @@ depends = 'fzf'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/fzf.vim' '''
 
 [[plugins]]
-repo='vim-skk/denops-skkeleton.vim'
+repo = 'vim-skk/denops-skkeleton.vim'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/denops-skkeleton.vim' '''
 
 [[plugins]]
-repo='shg-eo/skkeleton-azik'
+repo = 'shg-eo/skkeleton-azik'
 hook_add = '''exec 'source ' . g:rc_dir . '/settings/skkeleton-azik.vim' '''
 
 [[plugins]]
-repo='jjo/vim-cue'
+repo = 'jjo/vim-cue'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+on_path = '.*'

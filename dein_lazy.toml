@@ -1,8 +1,4 @@
 [[plugins]]
-repo = 'tomtom/tcomment_vim'
-on_path = '.*'
-
-[[plugins]]
 repo = 'mattn/emmet-vim'
 on_ft = ['html', 'vue', 'react', 'typescriptreact']
 hook_source = '''exec 'source ' . g:rc_dir . '/settings/emmet-vim.vim' '''
