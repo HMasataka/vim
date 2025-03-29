@@ -25,6 +25,12 @@ pip install black
 brew install hashicorp/tap/terraform-ls
 ```
 
+### CSharp
+
+```bash
+dotnet tool install -g csharp-ls
+```
+
 ### Color Scheme
 
 ```bash

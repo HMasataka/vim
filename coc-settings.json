@@ -37,6 +37,11 @@
           "--issues-exit-code=1"
         ]
       }
+    },
+    "csharp-ls": {
+      "command": "csharp-ls",
+      "filetypes": ["cs"],
+      "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
     }
   },
   "cSpell.userWords": ["dein", "gcloud", "grpc", "kubectl", "tmpl", "webrtc"],
