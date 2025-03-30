@@ -71,7 +71,8 @@
     "markdown",
     "plaintext",
     "yml",
-    "sh"
+    "sh",
+    "terraform"
   ],
   "rust-analyzer.inlayHints.typeHints.enable": false,
   "rust-analyzer.inlayHints.parameterHints.enable": false,
