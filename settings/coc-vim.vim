@@ -61,6 +61,7 @@ let g:coc_global_extensions = [
     \ 'coc-spell-checker',
     \ 'coc-gitignore',
     \ 'coc-word',
+    \ 'coc-sql',
     \ 'coc-fzf-preview',
     \ 'coc-clangd',
     \ 'coc-prettier',
