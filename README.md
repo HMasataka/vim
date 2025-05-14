@@ -3,10 +3,6 @@
 ## Requirements
 
 ```bash
-pip3 install neovim
-```
-
-```bash
 ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 ```
@@ -51,4 +47,10 @@ chmod u+x nvim.appimage
 
 ```bash
 brew install neovim
+```
+
+## Install dependencies
+
+```bash
+go install golang.org/x/tools/cmd/goimports@latest
 ```
