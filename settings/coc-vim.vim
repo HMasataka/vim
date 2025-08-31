@@ -47,6 +47,7 @@ let g:coc_global_extensions = [
     \ 'coc-rust-analyzer',
     \ 'coc-svelte',
     \ 'coc-tsserver',
+    \ 'coc-deno',
     \ 'coc-vetur',
     \ 'coc-vimlsp',
     \ 'coc-docker',
