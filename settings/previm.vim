@@ -1,1 +1,1 @@
-nnoremap <silent> <C-p> :PrevimOpen<CR>
+nnoremap <silent> <C-m> :PrevimOpen<CR>
