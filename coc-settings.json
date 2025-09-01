@@ -72,6 +72,7 @@
     "plaintext",
     "yml",
     "sh",
+    "sql",
     "terraform"
   ],
   "rust-analyzer.inlayHints.typeHints.enable": false,
