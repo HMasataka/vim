@@ -78,7 +78,9 @@ Plug 'tyru/open-browser.vim'
 Plug 'kannokanno/previm'
 exec 'source ' . g:rc_dir . '/settings/previm.vim'
 
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
+
+Plug 'cappyzawa/go-playground.nvim'
 
 Plug 'mattn/vim-goimports'
 
