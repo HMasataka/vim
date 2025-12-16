@@ -87,6 +87,7 @@ return {
       "coc-fzf-preview",
       "coc-clangd",
       "coc-prettier",
+      "coc-lua"
     }
 
     -- Code actions
