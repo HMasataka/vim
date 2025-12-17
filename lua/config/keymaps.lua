@@ -31,6 +31,7 @@ keymap("i", "<C-l>", "<Right>", opts)
 -- Move cursor to end of line by Ctrl+e
 keymap("i", "<C-e>", "<Esc><S-a>", opts)
 keymap("n", "<C-e>", "$", { noremap = true })
+keymap("v", "<C-e>", "$", { noremap = true })
 
 -- Move cursor to begin of line by Ctrl+a
 keymap("i", "<C-a>", "<Esc><S-i>", opts)
