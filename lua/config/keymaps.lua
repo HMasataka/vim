@@ -72,15 +72,15 @@ keymap("n", "<C-p>", ":bprev<CR>", opts)
 
 -- s<N> jump to N tab
 for n = 1, 9 do
-  keymap("n", "s" .. n, ":<C-u>tabnext " .. n .. "<CR>", opts)
+    keymap("n", "s" .. n, ":<C-u>tabnext " .. n .. "<CR>", opts)
 end
 
 -- sw<N> jump to N window
 for n = 1, 9 do
-  keymap("n", "sw" .. n, function()
-    local win_id = vim.fn.win_getid(n)
-    vim.fn.win_gotoid(win_id)
-  end, opts)
+    keymap("n", "sw" .. n, function()
+        local win_id = vim.fn.win_getid(n)
+        vim.fn.win_gotoid(win_id)
+    end, opts)
 end
 
 -- Tag jump
