@@ -29,6 +29,12 @@ return {
             vim.fn.CocAction("format")
         end, { nargs = 0 })
 
+        -- Import organization command
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            pattern = { "*.go" },
+            command = "call CocAction('runCommand', 'editor.action.organizeImport')"
+        })
+
         -- Show documentation with K
         keymap("n", "K", function()
             local filetype = vim.bo.filetype

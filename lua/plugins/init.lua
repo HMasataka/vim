@@ -48,7 +48,6 @@ return {
 
     -- Go plugins
     { "cappyzawa/go-playground.nvim" },
-    { "mattn/vim-goimports" },
 
     -- Table plugins
     { "mattn/vim-maketable" },
