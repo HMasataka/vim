@@ -43,6 +43,19 @@
       "command": "csharp-ls",
       "filetypes": ["cs"],
       "rootPatterns": ["*.csproj", ".vim/", ".git/", ".hg/"]
+    },
+    "biome": {
+      "command": "npx",
+      "args": ["@biomejs/biome", "lsp-proxy"],
+      "filetypes": [
+        "typescript",
+        "typescriptreact",
+        "javascript",
+        "javascriptreact",
+        "json",
+        "jsonc"
+      ],
+      "rootPatterns": ["biome.json", "biome.jsonc"]
     }
   },
   "cSpell.userWords": ["dein", "gcloud", "grpc", "kubectl", "tmpl", "webrtc"],
