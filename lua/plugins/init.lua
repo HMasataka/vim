@@ -53,9 +53,6 @@ return {
     -- Table plugins
     { "mattn/vim-maketable" },
 
-    -- Browser integration
-    { "tyru/open-browser.vim" },
-
     -- direnv
     { "direnv/direnv.vim" },
 }
