@@ -64,3 +64,6 @@ opt.gdefault = true
 
 -- Virtual edit
 opt.virtualedit = "onemore"
+
+-- Project-local config (.nvim.lua)
+opt.exrc = true
