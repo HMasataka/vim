@@ -22,17 +22,6 @@ return {
     -- Session management
     { "tpope/vim-obsession" },
 
-    -- Syntax highlighting
-    {
-        "sheerun/vim-polyglot",
-        init = function()
-            vim.g.polyglot_disabled = { "markdown" }
-            vim.g.vim_json_syntax_conceal = 0
-            vim.g.svelte_indent_script = 0
-            vim.g.svelte_indent_style = 0
-        end,
-    },
-
     -- Comment plugin
     { "tomtom/tcomment_vim" },
 
