@@ -6,6 +6,10 @@
   "coc.preferences.jumpCommand": "tab drop",
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSave": true,
+  "[sql]": {
+    "coc.preferences.formatOnType": false,
+    "coc.preferences.formatOnSave": false
+  },
   "markdownlint.config": {
     "default": true,
     "line_length": false
