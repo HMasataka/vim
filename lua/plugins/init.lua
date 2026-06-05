@@ -18,9 +18,6 @@ return {
     -- EditorConfig
     { "editorconfig/editorconfig-vim" },
 
-    -- Session management
-    { "tpope/vim-obsession" },
-
     -- GitHub Copilot
     { "github/copilot.vim" },
 
