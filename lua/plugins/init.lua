@@ -10,7 +10,6 @@ return {
     -- Text object plugins
     { "kana/vim-operator-user" },
     { "kana/vim-textobj-user" },
-    { "terryma/vim-expand-region" },
 
     -- Repeat support
     { "tpope/vim-repeat" },
