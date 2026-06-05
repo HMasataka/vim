@@ -1,63 +1,244 @@
-# How To Use
+# .vim
 
-## Requirements
+Neovim 設定一式。lazy.nvim + Lua 構成。
+
+## セットアップ
 
 ```bash
-ln -s ~/.vim/init.vim ~/.config/nvim/init.vim
+ln -s ~/.vim/init.lua ~/.config/nvim/init.lua
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
-```
-
-### Python
-
-#### formatter
-
-```bash
-pip install black
-```
-
-### Terraform
-
-```bash
-brew install hashicorp/tap/terraform-ls
-```
-
-### CSharp
-
-```bash
-dotnet tool install -g csharp-ls
-```
-
-### Color Scheme
-
-```bash
+ln -s ~/.vim/lua ~/.config/nvim/lua
 cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
 ```
 
-## Install neovim
+初回起動で lazy.nvim が自動ブートストラップ → `:Lazy install` で全プラグイン取得。
 
-### Ubuntu
+外部依存:
 
-```bash
-curl -LO https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-```
+- `ripgrep` (Telescope live_grep 用) — `brew install ripgrep` か nix-darwin で
+- `make` + C コンパイラ (一部プラグインのビルド用)
 
-### Mac
+## キーマップ一覧
 
-```bash
-brew install neovim
-```
+**Leader = `,`** (`vim.g.mapleader`)
 
-## Install dependencies
+### 基本操作
 
-```bash
-go install golang.org/x/tools/cmd/goimports@latest
-```
+| キー      | モード    | 動作                               |
+| --------- | --------- | ---------------------------------- |
+| `;`       | n         | `:` (コマンドライン起動)           |
+| `<C-j>`   | i / c / v | ESC                                |
+| `<C-j>`   | n         | `:nohlsearch` (検索ハイライト解除) |
+| `<C-c>`   | n         | インクリメント (旧 `<C-a>`)        |
+| `j` / `k` | n         | 表示行単位の移動 (`gj` / `gk`)     |
+| `<C-l>`   | i         | 右矢印                             |
+| `<C-e>`   | i         | 行末へジャンプして挿入             |
+| `<C-e>`   | n / v     | 行末へジャンプ (`$`)               |
+| `<C-a>`   | i         | 行頭へジャンプして挿入             |
+| `<C-a>`   | n         | 行頭非空白文字へジャンプ (`^`)     |
+| `go`      | n         | 対応括弧ジャンプ (`%`)             |
+| `R`       | n / v     | operator-replace                   |
 
-## Plug
+### 無効化されたデフォルト
 
-```bash
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+`ZZ` / `ZQ` / `Q` / `<MiddleMouse>` は誤爆防止のため無効。
+
+### ウィンドウ / タブ操作
+
+| キー         | 動作                              |
+| ------------ | --------------------------------- |
+| `ss`         | 横分割 (`:split`)                 |
+| `sv`         | 縦分割 (`:vsplit`)                |
+| `sh/j/k/l`   | 隣接ウィンドウへ移動              |
+| `sH/J/K/L`   | 現在ウィンドウを左/下/上/右へ配置 |
+| `sw1`〜`sw9` | N 番目のウィンドウへジャンプ      |
+| `st`         | 新タブ                            |
+| `sn` / `su`  | 次タブ / 前タブ                   |
+| `s1`〜`s9`   | N 番目のタブへジャンプ            |
+| `<C-n>`      | 次バッファ                        |
+| `<C-p>`      | 前バッファ                        |
+
+### クリップボード
+
+| キー       | モード | 動作                               |
+| ---------- | ------ | ---------------------------------- |
+| `<space>y` | n / v  | システムクリップボードへヤンク     |
+| `<space>p` | n / v  | システムクリップボードからペースト |
+
+## プラグイン別ショートカット
+
+### oil.nvim (ファイラ)
+
+| キー                          | 動作                                                    |
+| ----------------------------- | ------------------------------------------------------- |
+| `-`                           | 親ディレクトリを oil で開く / oil 内ならさらに上へ      |
+| `<C-f>`                       | oil を toggle (通常 → 開く / oil 内 → 閉じる)           |
+| `<CR>` (oil 内)               | カーソル位置のファイルを**新タブ**で開く + oil を閉じる |
+| `<CR>` (oil 内, ディレクトリ) | ディレクトリに潜る                                      |
+| `<C-c>` (oil 内)              | oil を閉じる                                            |
+| `_` (oil 内)                  | CWD へジャンプ                                          |
+
+### Telescope (ファジー検索)
+
+| キー  | 動作                  |
+| ----- | --------------------- |
+| `,ff` | ファイル検索          |
+| `,fg` | プロジェクト全文 grep |
+| `,fb` | バッファ一覧          |
+| `,fh` | ヘルプ検索            |
+
+Telescope プロンプト内: `<C-n>`/`<C-p>` 移動、`<CR>` 開く、`<C-v>` 縦分割、`<C-x>` 横分割、`<C-t>` 新タブ、`<C-c>` キャンセル
+
+### flash.nvim (ジャンプ)
+
+| キー       | 動作                                  |
+| ---------- | ------------------------------------- |
+| `f` / `F`  | 画面内文字ジャンプ (ラベル付き拡張版) |
+| `t` / `T`  | 画面内文字直前ジャンプ                |
+| `<space>f` | 任意文字数の fuzzy ジャンプ           |
+
+### gitsigns.nvim (Git)
+
+| キー          | モード | 動作                                  |
+| ------------- | ------ | ------------------------------------- |
+| `gn` / `gN`   | n / v  | 次/前のハンクへジャンプ               |
+| `,hs`         | n      | ハンクをステージ                      |
+| `,hr`         | n      | 未ステージの変更を取り消し            |
+| `,hu`         | n      | ステージ済みを取り消し                |
+| `,hs` / `,hr` | v      | 選択範囲のハンクをステージ / 取り消し |
+| `,hp`         | n      | ハンクのプレビュー                    |
+| `,hb`         | n      | カーソル行の blame をフル表示         |
+
+サインカラムに `+`/`~`/`-` で表示。
+
+### Comment.nvim
+
+| キー                            | モード    | 動作                          |
+| ------------------------------- | --------- | ----------------------------- |
+| `<C-_>` (= `Ctrl+-` / `Ctrl+/`) | n / i / x | 行/選択範囲のコメント toggle  |
+| `gcc`                           | n         | 行コメント toggle             |
+| `gbc`                           | n         | ブロックコメント toggle       |
+| `gc{motion}` / `gc` (visual)    | n / x     | 範囲を行コメント toggle       |
+| `gb{motion}` / `gb` (visual)    | n / x     | 範囲をブロックコメント toggle |
+
+### nvim-surround
+
+| キー        | 動作                  |
+| ----------- | --------------------- |
+| `ysiw"`     | 単語を `"` で囲う     |
+| `cs"'`      | `"` を `'` に変更     |
+| `ds"`       | `"` を削除            |
+| Visual `S"` | 選択範囲を `"` で囲う |
+
+操作中に対象範囲がハイライト表示される。
+
+### nvim-autopairs
+
+括弧/クォートを自動補完。treesitter 連携で文字列/コメント内では補完しない。`<CR>` で括弧内改行 → インデント整形も自動。
+
+### treesitter (構文関連)
+
+| キー          | モード    | 動作                                 |
+| ------------- | --------- | ------------------------------------ |
+| `+`           | n         | 現在の treesitter ノードを選択開始   |
+| `+`           | v         | 選択範囲を親ノードに拡張             |
+| `_`           | v         | 子ノードに縮小                       |
+| `vif` / `vaf` | n / x / o | 関数 inner / outer 選択 (treesitter) |
+| `vic` / `vac` | n / x / o | クラス inner / outer 選択            |
+
+`nvim-treesitter-context` により関数/クラス内で下にスクロールすると画面最上部に定義行が固定表示される。
+
+### textobj-multiblock
+
+| キー          | モード | 動作                                                     |
+| ------------- | ------ | -------------------------------------------------------- |
+| `vib` / `vab` | x / o  | 直近の括弧/クォート/バッククォート内 (それを含む) を選択 |
+
+対象: `()` `[]` `{}` `<>` `""` `''` ` ` ``
+
+### persistence.nvim (セッション)
+
+| キー  | 動作                              |
+| ----- | --------------------------------- |
+| `,qs` | CWD のセッション復元              |
+| `,ql` | 直近のセッション復元 (CWD 問わず) |
+| `,qd` | セッション保存停止 (今回限り)     |
+
+CWD ごとに自動保存 (nvim 終了時)。保存先: `~/.local/share/nvim/sessions/`
+
+### coc.nvim (LSP)
+
+| キー                    | モード | 動作                       |
+| ----------------------- | ------ | -------------------------- |
+| `gd`                    | n      | 定義へジャンプ             |
+| `gi`                    | n      | 実装へジャンプ             |
+| `K`                     | n      | hover ドキュメント         |
+| `<space>rf`             | n      | references 検索            |
+| `<space>rn`             | n      | rename                     |
+| `<space>l`              | n      | フォーマット               |
+| `<space>n` / `<space>N` | n      | 次/前のエラー診断          |
+| `<space>j` / `<space>k` | n      | 次/前の診断 (warning 含む) |
+| `,a`                    | n / v  | code action                |
+| `<TAB>`                 | i      | 補完選択 / snippet jump    |
+
+`*.go` 保存時に自動で `organizeImport` 実行。
+
+### copilot.vim
+
+デフォルトのまま (`<Tab>` で suggestion 受諾、insert モード時に suggestion 表示)。
+
+### skkeleton (日本語入力 SKK)
+
+| キー    | モード | 動作             |
+| ------- | ------ | ---------------- |
+| `<C-k>` | i / c  | SKK toggle       |
+| `<C-q>` | (skk)  | カタカナ変換     |
+| `<S-q>` | (skk)  | 半角カタカナ変換 |
+
+辞書: `~/.vim/skk/SKK-JISYO.L` (system) + `~/.vim/skk/skk-jisyo.utf8` (user)
+
+### Markdown プレビュー
+
+| キー  | 動作                               |
+| ----- | ---------------------------------- |
+| `,mp` | プレビュー toggle (ブラウザで開く) |
+
+ポート固定 `8765`。Mermaid 図対応。
+
+### vim-goaddtags (Go)
+
+| キー  | 動作                           |
+| ----- | ------------------------------ |
+| `,gt` | `:GoAddTags ` (構造体タグ追加) |
+
+### emmet-vim
+
+`<C-y>,` で展開 (insert モード、デフォルト挙動)。HTML/JSX で利用。
+
+### silicon
+
+`:Silicon` でコード画像生成。フォント: Hack + Hiragino Sans (日本語フォールバック)。
+
+### which-key.nvim
+
+`,` などのプレフィックスを押して少し待つと候補ポップアップ。
+
+## ステータスライン (lualine.nvim)
+
+下部: モード / git ブランチ + 差分 / 診断件数 / ファイル名 / ファイルタイプ / 進捗 / 位置
+上部: タブ一覧 (アクティブタブはモード色で強調)
+
+診断件数の `E:` `W:` `I:` `H:` はそれぞれ error / warn / info / hint。
+
+## ファイラ構成
+
+```tree
+~/.vim/
+├── init.lua                      # エントリポイント
+├── lua/
+│   ├── config/                   # コア設定 (options/keymaps/autocmds/...)
+│   └── plugins/                  # lazy.nvim のプラグイン spec (1 ファイル 1 プラグイン)
+├── coc-settings.json             # coc.nvim のサーバ設定
+├── colors/                       # カラースキーム
+└── skk/                          # SKK 辞書
 ```
