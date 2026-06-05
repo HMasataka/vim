@@ -5,7 +5,17 @@ return {
     lazy = false,
     keys = {
         { "-", "<cmd>Oil<cr>", desc = "Open parent directory" },
-        { "<C-f>", "<cmd>Oil<cr>", desc = "Open parent directory" },
+        {
+            "<C-f>",
+            function()
+                if vim.bo.filetype == "oil" then
+                    require("oil.actions").close.callback()
+                else
+                    require("oil").open()
+                end
+            end,
+            desc = "Toggle oil",
+        },
     },
     opts = {
         columns = {},
