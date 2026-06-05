@@ -84,7 +84,6 @@ return {
             "coc-gitignore",
             "coc-word",
             "coc-sql",
-            "coc-fzf-preview",
             "coc-clangd",
             "coc-prettier",
             "coc-lua"
@@ -92,20 +91,6 @@ return {
 
         -- Code actions
         keymap({ "v", "n" }, "<leader>a", "<Plug>(coc-codeaction-selected)", { silent = true })
-
-        -- Shell settings for coc-fzf-preview
-        vim.opt.shell = "/bin/zsh"
-        vim.env.SHELL = "/bin/zsh"
-
-        -- FZF Preview keymaps
-        keymap("n", "<Leader>f", "[fzf-p]", { noremap = true })
-        keymap("x", "<Leader>f", "[fzf-p]", { noremap = true })
-        keymap("n", "[fzf-p]f", ":<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>", opts)
-        keymap("n", "[fzf-p]s", ":<C-u>CocCommand fzf-preview.GitStatus<CR>", opts)
-        keymap("n", "[fzf-p]a", ":<C-u>CocCommand fzf-preview.GitActions<CR>", opts)
-        keymap("n", "[fzf-p]b", ":<C-u>CocCommand fzf-preview.Buffers<CR>", opts)
-        keymap("n", "[fzf-p]/",
-            ":<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query='\"<CR>", opts)
 
         -- OmniSharp settings
         vim.g.OmniSharp_server_use_mono = 1
