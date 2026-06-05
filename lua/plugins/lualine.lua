@@ -10,7 +10,17 @@ return {
             icons_enabled = false,
         },
         tabline = {
-            lualine_a = { { "tabs", mode = 2 } },
+            lualine_a = {
+                {
+                    "tabs",
+                    mode = 2,
+                    use_mode_colors = true,
+                    tabs_color = {
+                        active = "lualine_a_normal",
+                        inactive = "lualine_c_inactive",
+                    },
+                },
+            },
         },
     },
 }
