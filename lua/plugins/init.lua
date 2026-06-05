@@ -28,9 +28,6 @@ return {
     -- GitHub Copilot
     { "github/copilot.vim" },
 
-    -- Auto-pairs
-    { "cohama/lexima.vim" },
-
     -- Language-specific plugins
     { "jjo/vim-cue" },
     { "jsborjesson/vim-uppercase-sql" },
