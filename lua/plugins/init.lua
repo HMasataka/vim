@@ -14,7 +14,6 @@ return {
 
     -- Repeat support
     { "tpope/vim-repeat" },
-    { "tpope/vim-surround" },
 
     -- EditorConfig
     { "editorconfig/editorconfig-vim" },
