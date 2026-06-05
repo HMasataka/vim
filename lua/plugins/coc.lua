@@ -18,12 +18,6 @@ return {
         keymap("n", "<space>j", "<Plug>(coc-diagnostic-next)", { silent = true })
         keymap("n", "<space>k", "<Plug>(coc-diagnostic-prev)", { silent = true })
 
-        -- Function text objects
-        keymap("x", "if", "<Plug>(coc-funcobj-i)", { silent = true })
-        keymap("x", "af", "<Plug>(coc-funcobj-a)", { silent = true })
-        keymap("o", "if", "<Plug>(coc-funcobj-i)", { silent = true })
-        keymap("o", "af", "<Plug>(coc-funcobj-a)", { silent = true })
-
         -- Format command
         vim.api.nvim_create_user_command("Format", function()
             vim.fn.CocAction("format")
