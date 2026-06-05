@@ -22,9 +22,6 @@ return {
     -- Session management
     { "tpope/vim-obsession" },
 
-    -- Comment plugin
-    { "tomtom/tcomment_vim" },
-
     -- GitHub Copilot
     { "github/copilot.vim" },
 
