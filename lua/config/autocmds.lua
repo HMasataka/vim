@@ -20,3 +20,11 @@ vim.api.nvim_create_autocmd("BufReadPost", {
         end
     end,
 })
+
+-- commentstring for filetypes without a builtin ftplugin
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "cue",
+    callback = function()
+        vim.bo.commentstring = "// %s"
+    end,
+})

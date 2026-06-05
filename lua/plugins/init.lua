@@ -22,7 +22,6 @@ return {
     { "github/copilot.vim" },
 
     -- Language-specific plugins
-    { "jjo/vim-cue" },
     { "jsborjesson/vim-uppercase-sql" },
 
     -- Go plugins
