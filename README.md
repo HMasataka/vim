@@ -8,7 +8,7 @@ Neovim 設定一式。lazy.nvim + Lua 構成。
 ln -s ~/.vim/init.lua ~/.config/nvim/init.lua
 ln -s ~/.vim/coc-settings.json ~/.config/nvim/coc-settings.json
 ln -s ~/.vim/lua ~/.config/nvim/lua
-cp ~/.vim/colors/mstn3.vim ~/.config/nvim/colors
+ln -s ~/.vim/colors ~/.config/nvim/colors
 ```
 
 初回起動で lazy.nvim が自動ブートストラップ → `:Lazy install` で全プラグイン取得。
